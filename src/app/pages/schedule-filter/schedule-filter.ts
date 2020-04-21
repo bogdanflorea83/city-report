@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Config, ModalController, NavParams } from '@ionic/angular';
 
 import { ConferenceData } from '../../providers/conference-data';
+import { FirebaseService } from '../../providers/firebase.service';
 
 
 @Component({
@@ -13,10 +14,13 @@ export class ScheduleFilterPage {
   ios: boolean;
 
   tracks: {name: string, icon: string, isChecked: boolean}[] = [];
+  tracks2: {name: string, icon: string, isChecked: boolean}[] = [];
+
 
   constructor(
     public confData: ConferenceData,
     private config: Config,
+    private firebaseService: FirebaseService,
     public modalCtrl: ModalController,
     public navParams: NavParams
   ) { }
@@ -33,6 +37,17 @@ export class ScheduleFilterPage {
           name: track.name,
           icon: track.icon,
           isChecked: (excludedTrackNames.indexOf(track.name) === -1)
+        });
+      });
+    });
+
+    this.firebaseService.getTracks().then((tracks: any[]) => {
+      tracks.forEach(track => {
+        console.log(track);
+        this.tracks.push({
+          name: track,
+          icon: null,
+          isChecked: (excludedTrackNames.indexOf(track) === -1)
         });
       });
     });

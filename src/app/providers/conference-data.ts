@@ -98,7 +98,7 @@ export class ConferenceData {
     if (queryWords.length) {
       // of any query word is in the session name than it passes the query test
       queryWords.forEach((queryWord: string) => {
-        if (session.name.toLowerCase().indexOf(queryWord) > -1) {
+        if (session.name.toLowerCase().indexOf(queryWord.toLowerCase()) > -1) {
           matchesQueryText = true;
         }
       });
@@ -111,7 +111,7 @@ export class ConferenceData {
     // exclude tracks then this session passes the track test
     let matchesTracks = false;
     session.tracks.forEach((trackName: string) => {
-      if (excludeTracks.indexOf(trackName) === -1) {
+      if (excludeTracks.indexOf(trackName.toLowerCase()) === -1) {
         matchesTracks = true;
       }
     });

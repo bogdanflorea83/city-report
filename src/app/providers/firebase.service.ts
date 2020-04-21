@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentSnapshot, DocumentData } from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -15,6 +15,15 @@ export class FirebaseService {
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth
   ){}
+
+  getTracks() {
+    return new Promise<any>((resolve, reject) => {
+      this.afs.collection('procedures').doc("procedure").ref.get().then((querySnapshot: DocumentSnapshot<any>) => {
+        let docA: DocumentData = querySnapshot.data();
+        resolve(docA["procedures"]);
+      })
+    })
+  }
 
   getTasks(){
     return new Promise<any>((resolve, reject) => {
