@@ -5,11 +5,11 @@ import { ActionSheetController } from '@ionic/angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
-  selector: 'page-speaker-detail',
-  templateUrl: 'speaker-detail.html',
-  styleUrls: ['./speaker-detail.scss'],
+  selector: 'page-patient-detail',
+  templateUrl: 'patient-detail.html',
+  styleUrls: ['./patient-detail.scss'],
 })
-export class SpeakerDetailPage {
+export class PatientDetailPage {
   speaker: any;
 
   constructor(

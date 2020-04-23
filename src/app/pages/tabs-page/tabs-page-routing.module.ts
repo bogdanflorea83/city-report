@@ -34,8 +34,8 @@ const routes: Routes = [
             loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
           },
           {
-            path: 'speaker-details/:speakerId',
-            loadChildren: () => import('../speaker-detail/speaker-detail.module').then(m => m.SpeakerDetailModule)
+            path: 'patient-details/:speakerId',
+            loadChildren: () => import('../patient-detail/patient-detail.module').then(m => m.PatientDetailModule)
           }
         ]
       },
