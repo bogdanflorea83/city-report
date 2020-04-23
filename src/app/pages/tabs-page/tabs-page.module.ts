@@ -10,7 +10,7 @@ import { MapModule } from '../map/map.module';
 import { ScheduleModule } from '../schedule/schedule.module';
 import { SessionDetailModule } from '../session-detail/session-detail.module';
 import { PatientDetailModule } from '../patient-detail/patient-detail.module';
-import { SpeakerListModule } from '../speaker-list/speaker-list.module';
+import { PatientListModule } from '../patient-list/patient-list.module';
 
 @NgModule({
   imports: [
@@ -21,7 +21,7 @@ import { SpeakerListModule } from '../speaker-list/speaker-list.module';
     ScheduleModule,
     SessionDetailModule,
     PatientDetailModule,
-    SpeakerListModule,
+    PatientListModule,
     TabsPageRoutingModule
   ],
   declarations: [

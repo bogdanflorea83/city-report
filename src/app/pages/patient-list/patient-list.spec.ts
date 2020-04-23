@@ -9,7 +9,7 @@ import { ConferenceData } from '../../providers/conference-data';
 
 const confDataSub = {};
 
-describe('SpeakerListPage', () => {
+describe('PatientListPage', () => {
   let fixture, app;
   beforeEach(async(() => {
     const actionSheetSpy = jasmine.createSpyObj('ActionSheetController', [
@@ -19,7 +19,7 @@ describe('SpeakerListPage', () => {
     const iabSpy = jasmine.createSpyObj('InAppBrowser', ['create']);
 
     TestBed.configureTestingModule({
-      declarations: [SpeakerListPage],
+      declarations: [PatientListPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
         { provide: ActionSheetController, useValue: actionSheetSpy },

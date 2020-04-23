@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 
 @Component({
-  selector: 'page-speaker-list',
-  templateUrl: 'speaker-list.html',
-  styleUrls: ['./speaker-list.scss'],
+  selector: 'page-patient-list',
+  templateUrl: 'patient-list.html',
+  styleUrls: ['./patient-list.scss'],
 })
-export class SpeakerListPage implements OnInit {
+export class PatientListPage implements OnInit {
   speakers: any[] = [];
   queryText = '';
   showSearchbar: boolean;
