@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ConferenceData } from '../../providers/conference-data';
+import { ModalController, IonRouterOutlet } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 
 @Component({
   selector: 'page-speaker-list',
@@ -10,8 +13,12 @@ export class SpeakerListPage implements OnInit {
   speakers: any[] = [];
   queryText = '';
   showSearchbar: boolean;
+  excludeTracks: any = [];
 
-  constructor(public confData: ConferenceData) {}
+  constructor(public confData: ConferenceData, 
+    public modalCtrl: ModalController,
+    public router: Router,
+    public routerOutlet: IonRouterOutlet,) {}
 
   ionViewDidEnter() {
     //this.getSpeakersFromDatabase();
@@ -35,5 +42,33 @@ export class SpeakerListPage implements OnInit {
       });
       this.speakers = filteredSpekers;
     });
+  }
+
+  async presentFilter() {
+    const modal = await this.modalCtrl.create({
+      component: ScheduleFilterPage,
+      swipeToClose: true,
+      presentingElement: this.routerOutlet.nativeEl,
+      componentProps: { excludedTracks: this.excludeTracks }
+    });
+    await modal.present();
+
+    const { data } = await modal.onWillDismiss();
+    if (data) {
+      this.excludeTracks = data;
+      this.updateSchedule();
+    }
+  }
+
+  updateSchedule() {
+    // Close any open sliding items when the schedule updates
+    // if (this.scheduleList) {
+    //   this.scheduleList.closeSlidingItems();
+    // }
+
+    // this.confData.getTimeline(this.dayIndex, this.queryText, this.excludeTracks, this.segment).subscribe((data: any) => {
+    //   this.shownSessions = data.shownSessions;
+    //   this.groups = data.groups;
+    // });
   }
 }

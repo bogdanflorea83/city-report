@@ -21,12 +21,12 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AppComponent implements OnInit {
   appPages = [
     {
-      title: 'Schedule',
+      title: 'Agenda',
       url: '/app/tabs/schedule',
       icon: 'calendar'
     },
     {
-      title: 'Speakers',
+      title: 'Pacienti',
       url: '/app/tabs/speakers',
       icon: 'people'
     },
