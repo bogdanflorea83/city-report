@@ -5,7 +5,10 @@ import { PatientListPage } from './patient-list';
 const routes: Routes = [
   {
     path: '',
-    component: PatientListPage
+    component: PatientListPage,
+    children: [
+          
+    ]
   }
 ];
 

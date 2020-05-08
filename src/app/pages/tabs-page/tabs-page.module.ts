@@ -11,6 +11,7 @@ import { ScheduleModule } from '../schedule/schedule.module';
 import { SessionDetailModule } from '../session-detail/session-detail.module';
 import { PatientDetailModule } from '../patient-detail/patient-detail.module';
 import { PatientListModule } from '../patient-list/patient-list.module';
+import { AddPatientPageModule } from '../add-patient/add-patient.module';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { PatientListModule } from '../patient-list/patient-list.module';
     SessionDetailModule,
     PatientDetailModule,
     PatientListModule,
+    AddPatientPageModule,
     TabsPageRoutingModule
   ],
   declarations: [

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Patient } from '../../patient.model';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-patient',
@@ -9,12 +11,36 @@ import { Router } from '@angular/router';
 })
 export class AddPatientPage implements OnInit {
 
-    validations_form: FormGroup;
     genders: Array<string>;
+
+    isReadyToSave: boolean;
+
+    username: '';
+      name: '';
+      lastname: '';
+      email: '';
+      gender: '';
+      terms: false;
   
+    form = this.formBuilder.group({
+      username: [null, [Validators.required]],
+      name: [null, [Validators.required]],
+      lastname: [null, [Validators.required]],
+      email: [null, [Validators.required]],
+      gender: [null, [Validators.required]],
+      terms: [null, [Validators.required]],
+  });
+
     constructor(
-      private router: Router
-    ) { }
+      private router: Router,
+      protected formBuilder: FormBuilder,
+      protected toastCtrl: ToastController,
+    ) { 
+      // Watch the form for changes, and
+      this.form.valueChanges.subscribe((v) => {
+        this.isReadyToSave = this.form.valid;
+    });
+    }
   
     ngOnInit() {
       //  We just use a few random countries, however, you can use the countries you need by just adding them to this list.
@@ -28,47 +54,35 @@ export class AddPatientPage implements OnInit {
 
     }
   
-    validation_messages = {
-      'username': [
-        { type: 'required', message: 'Username is required.' },
-        { type: 'minlength', message: 'Username must be at least 5 characters long.' },
-        { type: 'maxlength', message: 'Username cannot be more than 25 characters long.' },
-        { type: 'pattern', message: 'Your username must contain only numbers and letters.' },
-        { type: 'validUsername', message: 'Your username has already been taken.' }
-      ],
-      'name': [
-        { type: 'required', message: 'Name is required.' }
-      ],
-      'lastname': [
-        { type: 'required', message: 'Last name is required.' }
-      ],
-      'email': [
-        { type: 'required', message: 'Email is required.' },
-        { type: 'pattern', message: 'Please wnter a valid email.' }
-      ],
-      'phone': [
-        { type: 'required', message: 'Phone is required.' },
-        { type: 'validCountryPhone', message: 'The phone is incorrect for the selected country.' }
-      ],
-      'password': [
-        { type: 'required', message: 'Password is required.' },
-        { type: 'minlength', message: 'Password must be at least 5 characters long.' },
-        { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
-      ],
-      'confirm_password': [
-        { type: 'required', message: 'Confirm password is required.' }
-      ],
-      'matching_passwords': [
-        { type: 'areEqual', message: 'Password mismatch.' }
-      ],
-      'terms': [
-        { type: 'pattern', message: 'You must accept terms and conditions.' }
-      ],
-    };
-  
     onSubmit(values){
       console.log(values);
-      this.router.navigate(["/schedule"]);
+      this.router.navigate(["/app/tabs/schedule"]);
     }
+
+    save(){
+      const patient = this.createFromForm();
+      console.log(JSON.stringify(patient));
+      this.onSaveSuccess();
+    }
+
+    async onSaveSuccess() {
+      const toast = await this.toastCtrl.create({message: `Pacient salvat cu success.`, duration: 2000, position: 'middle'});
+      toast.present();
+      this.router.navigate(["/app/tabs/schedule"]);
+  }
+
+    private createFromForm(): Patient {
+
+      let procedures: [] = [];
+      procedures.push[this.form.get(['username']).value];
+      return {
+          ...new Patient(),
+          id: null,
+          name: this.form.get(['username']).value,
+          birthdate: null,
+          phone: this.form.get(['username']).value,
+          procedures: procedures,
+      };
+  }
   
   }

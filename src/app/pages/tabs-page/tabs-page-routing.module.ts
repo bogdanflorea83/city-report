@@ -36,6 +36,10 @@ const routes: Routes = [
           {
             path: 'patient-details/:speakerId',
             loadChildren: () => import('../patient-detail/patient-detail.module').then(m => m.PatientDetailModule)
+          },
+          {
+            path: 'add-patient',
+            loadChildren: () => import('../add-patient/add-patient.module').then(m => m.AddPatientPageModule)
           }
         ]
       },
