@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
 import { AddPatientPageRoutingModule } from './add-patient-routing.module';
 
 import { AddPatientPage } from './add-patient.page';
+import { AutoCompleteModule } from 'ionic4-auto-complete';
+import { ProceduresAutocompleteService } from '../../providers/procedures-autocomplete.service';
 
 @NgModule({
   imports: [
@@ -14,7 +16,11 @@ import { AddPatientPage } from './add-patient.page';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    AddPatientPageRoutingModule
+    AddPatientPageRoutingModule,
+    AutoCompleteModule,
+  ],
+  providers: [
+    ProceduresAutocompleteService
   ],
   declarations: [AddPatientPage]
 })

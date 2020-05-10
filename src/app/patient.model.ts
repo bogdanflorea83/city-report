@@ -23,6 +23,7 @@ export class Appointment implements BaseEntity {
         public procedureStartDateTime?: Date,
         public procedureEndDateTime?: Date,
         public procedureMonth?: number,
+        public procedureYear?: number,
         public diagnostic?: string,
         public notes?: string,
     ) {

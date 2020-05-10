@@ -16,8 +16,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+import { AutoCompleteModule } from 'ionic4-auto-complete';
+
 @NgModule({
   imports: [
+    AutoCompleteModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

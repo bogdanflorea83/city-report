@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Patient, Appointment } from '../../patient.model';
+import { Appointment } from '../../patient.model';
 import { ToastController } from '@ionic/angular';
 import { AssetsService } from '../../providers/assets.service';
+import { ProceduresAutocompleteService } from '../../providers/procedures-autocomplete.service';
+import { AutoCompleteComponent } from 'ionic4-auto-complete';
 
 @Component({
   selector: 'app-add-patient',
@@ -29,6 +31,7 @@ export class AddPatientPage implements OnInit {
   appointmentDuration: '';
   diagnostic: '';
   notes: '';
+  appointmentPatient: any;
 
   form = this.formBuilder.group({
     name: [null, [Validators.required]],
@@ -40,6 +43,7 @@ export class AddPatientPage implements OnInit {
     appointmentDuration: [null, [Validators.required]],
     diagnostic: [null, [Validators.required]],
     notes: [null, [Validators.required]],
+    appointmentPatient: [null, [Validators.required]],
   });
 
   constructor(
@@ -47,6 +51,7 @@ export class AddPatientPage implements OnInit {
     protected formBuilder: FormBuilder,
     protected toastCtrl: ToastController,
     private assetsService: AssetsService,
+    private autocompleteService: ProceduresAutocompleteService,
   ) {
     this.currentDate = this.formatDate(new Date);
     this.existingProceduresCatalog = this.assetsService.procedures;
@@ -54,6 +59,9 @@ export class AddPatientPage implements OnInit {
       this.isReadyToSave = this.form.valid;
     });
   }
+
+  @ViewChild('searchbar', null)
+  searchbar: AutoCompleteComponent;
 
   ngOnInit(){
 
@@ -96,17 +104,22 @@ export class AddPatientPage implements OnInit {
   private createFromForm(): Appointment {
     //let procedures: [] = [];
     //procedures.push[this.form.get(['name']).value];
+    let time = new Date(this.form.get(['appointmentDateTime']).value);
+    let duration = this.form.get(['appointmentDuration']).value;
+    let endTime = new Date (time.getTime() + duration*60*1000);
+
     return {
       ...new Appointment(),
       id: null,
       name: this.form.get(['name']).value,
       birthdate: this.form.get(['birthdate']).value,
       phone: this.form.get(['phone']).value,
-      procedure: null,
-      procedures: this.form.get(['appointmentProcedures']).value,
-      procedureStartDateTime: new Date(),
-      procedureEndDateTime: new Date(),
-      procedureMonth: 0,
+      procedure: this.searchbar.selected,
+      procedures: this.searchbar.selected,
+      procedureStartDateTime: this.form.get(['appointmentDateTime']).value,
+      procedureEndDateTime: endTime,
+      procedureMonth: time.getMonth(),
+      procedureYear: time.getFullYear(),
       diagnostic: this.form.get(['diagnostic']).value,
       notes: this.form.get(['notes']).value,
     };
