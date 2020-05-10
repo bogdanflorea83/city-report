@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
       <ion-buttons slot="start">
-          <ion-back-button></ion-back-button>
+        <ion-button  (click)="cancel()">
+          <span>Anulare</span>
+        </ion-button>
       </ion-buttons>
       <ion-title>
           Adaugare pacient
@@ -19,35 +21,53 @@
 
   <form [formGroup]="form" name="form" (ngSubmit)="save()">
     <ion-item>
-      <ion-label position="floating" color="primary">Username</ion-label>
-      <ion-input type="text" formControlName="username"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating" color="primary">Name</ion-label>
+      <ion-label position="floating" color="primary">Nume</ion-label>
       <ion-input type="text" formControlName="name"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Last name</ion-label>
-      <ion-input type="text" formControlName="lastname"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label position="floating" color="primary">Email</ion-label>
-      <ion-input type="text" formControlName="email"></ion-input>
+      <ion-label position="floating" color="primary">Data nasterii</ion-label>
+      <ion-datetime displayFormat="YYYY MMM DD" mode="ios" max="{{currentDate}}" formControlName="birthdate" placeholder="Data nasterii"></ion-datetime>
+
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Gender</ion-label>
-      <ion-select formControlName="gender" cancelText="Cancel" okText="OK">
-        <ion-select-option *ngFor="let gender of genders" [value]="gender">{{gender}}</ion-select-option>
+      <ion-label position="floating" color="primary">Telefon</ion-label>
+      <ion-input type="tel" formControlName="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Data programare</ion-label>
+      <ion-datetime displayFormat="YYYY MMM DD DDDD" mode="ios" min="{{currentDate}}" max="2099-12-31"
+        formControlName="appointmentDate" placeholder="Data" (ionChange)="appointmentDateSelected($event)"
+        dayNames="Duminica, Luni, Marti, Miercuri, Joi, Vineri, Sambata"></ion-datetime>
+    </ion-item>
+
+    <ion-item *ngIf="appointmentDateValue">
+      <ion-label position="floating" color="primary">Ora programare</ion-label>
+      <ion-datetime displayFormat="H:mm a" minuteValues="0,15,30,45" mode="ios" value="{{appointmentDateValue}}" formControlName="appointmentDateTime" placeholder="Ora"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Durata programare (minute)</ion-label>
+      <ion-input type="number" formControlName="appointmentDuration"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Proceduri</ion-label>
+      <ion-select multiple="true" formControlName="appointmentProcedures" cancelText="Cancel" okText="OK" >
+        <ion-select-option *ngFor="let procedure of existingProceduresCatalog">{{procedure}}</ion-select-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
-      <ion-label color="primary">I accept terms and conditions</ion-label>
-      <ion-checkbox color="primary" formControlName="terms"></ion-checkbox>
+      <ion-label position="floating" color="primary">Diagnostic</ion-label>
+      <ion-input type="text" formControlName="diagnostic"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Note</ion-label>
+      <ion-input type="text" formControlName="notes"></ion-input>
     </ion-item>
 
   </form>

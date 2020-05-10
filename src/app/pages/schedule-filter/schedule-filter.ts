@@ -3,6 +3,7 @@ import { Config, ModalController, NavParams } from '@ionic/angular';
 
 import { ConferenceData } from '../../providers/conference-data';
 import { FirebaseService } from '../../providers/firebase.service';
+import { AssetsService } from '../../providers/assets.service';
 
 
 @Component({
@@ -20,9 +21,9 @@ export class ScheduleFilterPage {
   constructor(
     public confData: ConferenceData,
     private config: Config,
-    private firebaseService: FirebaseService,
     public modalCtrl: ModalController,
-    public navParams: NavParams
+    public navParams: NavParams,
+    private assetsService: AssetsService,
   ) { }
 
   ionViewWillEnter() {
@@ -31,24 +32,11 @@ export class ScheduleFilterPage {
     // passed in array of track names that should be excluded (unchecked)
     const excludedTrackNames = this.navParams.get('excludedTracks');
 
-    this.confData.getTracks().subscribe((tracks: any[]) => {
-      tracks.forEach(track => {
-        this.tracks.push({
-          name: track.name,
-          icon: track.icon,
-          isChecked: (excludedTrackNames.indexOf(track.name) === -1)
-        });
-      });
-    });
-
-    this.firebaseService.getTracks().then((tracks: any[]) => {
-      tracks.forEach(track => {
-        console.log(track);
-        this.tracks.push({
-          name: track,
-          icon: null,
-          isChecked: (excludedTrackNames.indexOf(track) === -1)
-        });
+    this.assetsService.procedures.forEach(track => {
+      this.tracks.push({
+        name: track,
+        icon: null,
+        isChecked: (excludedTrackNames.indexOf(track) === -1)
       });
     });
   }

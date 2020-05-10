@@ -11,6 +11,7 @@ import { Storage } from '@ionic/storage';
 
 import { UserData } from './providers/user-data';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AssetsService } from './providers/assets.service';
 
 @Component({
   selector: 'app-root',
@@ -54,7 +55,7 @@ export class AppComponent implements OnInit {
     private userData: UserData,
     private swUpdate: SwUpdate,
     private toastCtrl: ToastController,
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
   ) {
     this.initializeApp();
   }
@@ -83,13 +84,6 @@ export class AppComponent implements OnInit {
         .then(() => window.location.reload());
     });
   }
-
-  // initializeApp() {
-  //   this.platform.ready().then(() => {
-  //     this.statusBar.styleDefault();
-  //     this.splashScreen.hide();
-  //   });
-  // }
 
   initializeApp() {
     this.platform.ready().then(() => {
