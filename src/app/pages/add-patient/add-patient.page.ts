@@ -31,6 +31,7 @@ export class AddPatientPage implements OnInit {
   appointmentDuration: '';
   diagnostic: '';
   notes: '';
+  email: '';
   appointmentPatient: any;
 
   form = this.formBuilder.group({
@@ -44,6 +45,7 @@ export class AddPatientPage implements OnInit {
     diagnostic: [null, [Validators.required]],
     notes: [null, [Validators.required]],
     appointmentPatient: [null, [Validators.required]],
+    email: [null, [Validators.required]],
   });
 
   constructor(
@@ -122,6 +124,7 @@ export class AddPatientPage implements OnInit {
       procedureYear: time.getFullYear(),
       diagnostic: this.form.get(['diagnostic']).value,
       notes: this.form.get(['notes']).value,
+      email: this.form.get(['email']).value,
     };
   }
 

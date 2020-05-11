@@ -1,7 +1,7 @@
 {
   "schedule": [
     {
-      "date": "2047-05-17",
+      "date": "2020-05-11",
       "groups": [
         {
           "time": "Luni",
@@ -10,14 +10,14 @@
               "name": "Florea Bogdan",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-11", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 1",
               "timeStart": "8:00 am",
               "timeEnd": "9:00 am",
               "location": "Cabinet 1",
-              "tracks": ["Food"],
+              "tracks": ["Remodelare lob nazal"],
               "id": "1"
             }
           ]
@@ -29,7 +29,7 @@
               "name": "Popescu Ioana ",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-12", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 2",
@@ -38,14 +38,14 @@
               "speakerNames": ["Ted Turtle"],
               "timeStart": "9:00 am",
               "timeEnd": "9:15 am",
-              "tracks": ["Ionic"],
+              "tracks": ["Abdominoplastie subtotala"],
               "id": "2"
             },
             {
               "name": "Mazilu M ",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-12", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -54,14 +54,14 @@
               "speakerNames": ["Rachel Rabbit"],
               "timeStart": "9:15 am",
               "timeEnd": "9:30 am",
-              "tracks": ["Ionic"],
+              "tracks": ["Abdominoplastie subtotala"],
               "id": "3"
             },
             {
               "name": "Ionescu A ",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-12", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -70,7 +70,7 @@
               "speakerNames": ["Ellie Elephant"],
               "timeStart": "9:30 am",
               "timeEnd": "9:45 am",
-              "tracks": ["Ionic"],
+              "tracks": ["Abdominoplastie subtotala"],
               "id": "4"
             }
           ]
@@ -82,7 +82,7 @@
               "name": "Gabriela C ",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-13", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -91,14 +91,14 @@
               "speakerNames": ["Eva Eagle", "Lionel Lion"],
               "timeStart": "10:00 am",
               "timeEnd": "10:15 am",
-              "tracks": ["Angular"],
+              "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
               "id": "5"
             },
             {
               "name": "Andreea i - silicoane",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-13", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -107,14 +107,14 @@
               "speakerNames": ["Rachel Rabbit"],
               "timeStart": "10:15 am",
               "timeEnd": "10:30 am",
-              "tracks": ["Angular"],
+              "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
               "id": "6"
             },
             {
               "name": "Mihaela I - buze",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-13", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -123,14 +123,14 @@
               "speakerNames": ["Isabella Iguana", "Eva Eagle"],
               "timeStart": "10:15 am",
               "timeEnd": "10:30 am",
-              "tracks": ["Angular"],
+              "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
               "id": "7"
             },
             {
               "name": "Dorel C - alt",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-13", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -139,7 +139,7 @@
               "speakerNames": ["Charlie Cheetah"],
               "timeStart": "10:45 am",
               "timeEnd": "11:00 am",
-              "tracks": ["Angular"],
+              "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
               "id": "8"
             }
           ]
@@ -151,7 +151,7 @@
               "name": "Pacienta",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-14", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -160,14 +160,14 @@
               "speakerNames": ["Karl Kitten", "Lionel Lion"],
               "timeStart": "11:00 am",
               "timeEnd": "11:45 am",
-              "tracks": ["Workshop"],
+              "tracks": ["Labioplastia"],
               "id": "9"
             },
             {
               "name": "Pacienta",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-14", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -176,14 +176,14 @@
               "speakerNames": ["Lionel Lion", "Gino Giraffe"],
               "timeStart": "11:30 am",
               "timeEnd": "11:50 am",
-              "tracks": ["Workshop"],
+              "tracks": ["Labioplastia"],
               "id": "10"
             },
             {
               "name": "Pacienta",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-14", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -192,7 +192,7 @@
               "speakerNames": ["Rachel Rabbit", "Eva Eagle"],
               "timeStart": "11:30 am",
               "timeEnd": "12:00 pm",
-              "tracks": ["Workshop"],
+              "tracks": ["Labioplastia"],
               "id": "11"
             }
           ]
@@ -203,8 +203,8 @@
             {
               "name": "Pacienta",
               "phoneNumber":"+1-541-754-3010",
-              "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "birthDate": "1980-05-18", 
+              "date": "2020-05-15", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -212,7 +212,7 @@
               "description": "Come grab lunch with all the Ionic fanatics and talk all things Ionic",
               "timeStart": "12:00 pm",
               "timeEnd": "1:00 pm",
-              "tracks": ["Communication"],
+              "tracks": ["Blefaroplastie superioară bilaterală + Abdominoplastie radicală"],
               "id": "12"
             }
           ]
@@ -224,7 +224,7 @@
               "name": "Pacienta",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-18", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -233,14 +233,14 @@
               "speakerNames": ["Paul Puppy"],
               "timeStart": "1:00 pm",
               "timeEnd": "1:15 pm",
-              "tracks": ["Food"],
+              "tracks": ["Remodelare lob nazal"],
               "id": "13"
             },
             {
               "name": "Pacienta",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-18", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -249,14 +249,14 @@
               "speakerNames": ["Gino Giraffe"],
               "timeStart": "1:15 pm",
               "timeEnd": "1:30 pm",
-              "tracks": ["Food"],
+              "tracks": ["Remodelare lob nazal"],
               "id": "14"
             },
             {
               "name": "Pacienta",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-18", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -265,7 +265,7 @@
               "speakerNames": ["Molly Mouse", "Burt Bear"],
               "timeStart": "1:30 pm",
               "timeEnd": "2:00 pm",
-              "tracks": ["Food"],
+              "tracks": ["Remodelare lob nazal"],
               "id": "15"
             }
           ]
@@ -276,8 +276,8 @@
             {
               "name": "Pacienta",
               "phoneNumber":"+1-541-754-3010",
-              "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "birthDate": "1980-05-19", 
+              "date": "2020-05-19", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -286,14 +286,14 @@
               "speakerNames": ["Burt Bear", "Charlie Cheetah"],
               "timeStart": "2:00 pm",
               "timeEnd": "2:30 pm",
-              "tracks": ["Ionic"],
+              "tracks": ["Abdominoplastie subtotala"],
               "id": "16"
             },
             {
               "name": "Pacienta",
               "phoneNumber":"+1-541-754-3010",
-              "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "birthDate": "1980-05-19", 
+              "date": "2020-05-19", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -302,14 +302,14 @@
               "speakerNames": ["Donald Duck"],
               "timeStart": "2:30 pm",
               "timeEnd": "2:45 pm",
-              "tracks": ["Ionic"],
+              "tracks": ["Abdominoplastie subtotala"],
               "id": "17"
             },
             {
               "name": "Pacienta",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-19", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -318,7 +318,7 @@
               "speakerNames": ["Isabella Iguana", "Ellie Elephant"],
               "timeStart": "2:45 pm",
               "timeEnd": "3:00 pm",
-              "tracks": ["Ionic"],
+              "tracks": ["Abdominoplastie subtotala"],
               "id": "18"
             }
           ]
@@ -330,7 +330,7 @@
               "name": "Pacienta",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-20", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -339,14 +339,13 @@
               "speakerNames": ["Ted Turtle"],
               "timeStart": "3:00 pm",
               "timeEnd": "3:30 pm",
-              "tracks": ["Angular"],
+              "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
               "id": "19"
             },
             {
               "name": "Pacienta",
-              "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2047-05-17", 
+              "date": "2020-05-20", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -355,7 +354,7 @@
               "speakerNames": ["Rachel Rabbit"],
               "timeStart": "3:30 pm",
               "timeEnd": "3:45 pm",
-              "tracks": ["Angular"],
+              "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
               "id": "20"
             }
           ]
@@ -518,7 +517,6 @@
       "title": "Software Engineer",
       "location": "Everywhere",
       "email": "ted@example.com",
-      "phone": "+1-541-754-3010",
       "id": "13"
     }
   ],
@@ -544,7 +542,7 @@
 
   "tracks": [
     {
-      "name": "Angular",
+      "name": "Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni",
       "icon": "logo-angular"
     },
     {
@@ -552,11 +550,11 @@
       "icon": "document"
     },
     {
-      "name": "Food",
+      "name": "Remodelare lob nazal",
       "icon": "restaurant"
     },
     {
-      "name": "Ionic",
+      "name": "Abdominoplastie subtotala",
       "icon": "logo-ionic"
     },
     {
@@ -572,11 +570,11 @@
       "icon": "cog"
     },
     {
-      "name": "Workshop",
+      "name": "Labioplastia",
       "icon": "construct"
     },
     {
-      "name": "Communication",
+      "name": "Blefaroplastie superioară bilaterală + Abdominoplastie radicală",
       "icon": "call"
     },
     {

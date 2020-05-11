@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, DocumentSnapshot, DocumentData } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentSnapshot, DocumentData, QuerySnapshot } from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import { AngularFireAuth } from '@angular/fire/auth';
+import * as _ from 'lodash';
+import { Appointment } from '../patient.model';
+import { UserData } from './user-data';
 
 @Injectable({
   providedIn: 'root'
@@ -13,17 +16,84 @@ export class FirebaseService {
 
   constructor(
     public afs: AngularFirestore,
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
+    public user: UserData
   ){}
 
   getTracks() {
     return new Promise<any>((resolve, reject) => {
       this.afs.collection('procedures').doc("procedure").ref.get().then((querySnapshot: DocumentSnapshot<any>) => {
         let docA: DocumentData = querySnapshot.data();
-        resolve(docA["procedures"]);
+        let procedures = docA["procedures"];
+        resolve(procedures);
       })
     })
   }
+
+  getTimelineFromFirebase(
+    startDate: Date,
+    endDate: Date,
+    queryText = '',
+    excludeTracks: any[] = [],
+  ) {
+    queryText = queryText.toLowerCase().replace(/,|\.|-/g, ' ');
+    const queryWords = queryText.split(' ').filter(w => !!w.trim().length);
+
+    return new Promise<any>((resolve, reject) => {
+      let appointmentsMap: Map<String, Appointment[]> = new Map<String, Appointment[]>();
+
+      this.afs.collection('appointments').ref.where('procedureStartDateTime', '>=', startDate).
+        where('procedureStartDateTime', '<=', endDate).get()
+        .then((querySnapshot: QuerySnapshot<any>) => {
+          querySnapshot.forEach((doc) => {
+            console.log(doc.id, " => ", doc.data());
+            let data = doc.data();
+            let appoinment: Appointment = new Appointment();
+            appoinment = _.merge({}, appoinment, data);
+            let dateKey = this.formatDate(appoinment.procedureStartDateTime);
+            if(!appointmentsMap.has(dateKey)){
+              appointmentsMap.set(dateKey, []);
+            }
+            let appointmentPerDay : Appointment[] = appointmentsMap.get(dateKey);
+            this.filterSession(appoinment, queryWords, excludeTracks);
+            appointmentPerDay.push(appoinment);
+          });
+        });
+      resolve(appointmentsMap);
+    });
+  }
+
+  filterSession(
+    session: Appointment,
+    queryWords: string[],
+    excludeTracks: any[],
+  ) {
+    let matchesQueryText = false;
+    if (queryWords.length) {
+      // of any query word is in the session name than it passes the query test
+      queryWords.forEach((queryWord: string) => {
+        if (session.name.toLowerCase().indexOf(queryWord.toLowerCase()) > -1) {
+          matchesQueryText = true;
+        }
+      });
+    } else {
+      // if there are no query words then this session passes the query test
+      matchesQueryText = true;
+    }
+
+    // if any of the sessions tracks are not in the
+    // exclude tracks then this session passes the track test
+    let matchesTracks = false;
+    session.procedures.forEach((procedureName: string) => {
+      if (excludeTracks.indexOf(procedureName.toLowerCase()) === -1) {
+        matchesTracks = true;
+      }
+    });
+
+    // all tests must be true if it should not be hidden
+    session.hide = !(matchesQueryText && matchesTracks);
+  }
+
 
   getTasks(){
     return new Promise<any>((resolve, reject) => {
@@ -122,5 +192,18 @@ export class FirebaseService {
         })
       })
     })
+  }
+
+  formatDate(date: Date) {
+    var month = '' + (date.getMonth() + 1),
+      day = '' + date.getDate(),
+      year = date.getFullYear();
+
+    if (month.length < 2)
+      month = '0' + month;
+    if (day.length < 2)
+      day = '0' + day;
+
+    return [year, month, day].join('-');
   }
 }

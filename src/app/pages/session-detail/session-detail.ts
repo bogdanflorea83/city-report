@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ConferenceData } from '../../providers/conference-data';
 import { ActivatedRoute } from '@angular/router';
 import { UserData } from '../../providers/user-data';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'page-session-detail',
@@ -17,7 +18,8 @@ export class SessionDetailPage {
   constructor(
     private dataProvider: ConferenceData,
     private userProvider: UserData,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private toastCtrl: ToastController,
   ) { }
 
   ionViewWillEnter() {
@@ -63,5 +65,14 @@ export class SessionDetailPage {
 
   shareSession() {
     console.log('Clicked share session');
+  }
+
+  async phoneCall(){
+    if(!this.session.phoneNumber){
+      const toast = await this.toastCtrl.create({ message: `Pacientul nu are numar de telefon inregistrat.`, duration: 2000, position: 'middle' });
+      toast.present();
+    }else{
+      console.log('phone call');
+    }
   }
 }

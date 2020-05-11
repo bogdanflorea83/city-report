@@ -3,16 +3,8 @@
     <ion-buttons *ngIf="!showSearchbar" slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <!--<ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
-      <ion-segment-button value="all">
-        All
-      </ion-segment-button>
-      <ion-segment-button value="favorites">
-        Favorites
-      </ion-segment-button>
-    </ion-segment>-->
     <ion-title *ngIf="!showSearchbar">Agenda</ion-title>
-    <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" [(ngModel)]="queryText" (ionChange)="updateSchedule()" (ionCancel)="showSearchbar = false" placeholder="Search"></ion-searchbar>
+    <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" [(ngModel)]="queryText" (ionChange)="updateSchedule()" (ionCancel)="onCancelFilter()" placeholder="Search"></ion-searchbar>
     <ion-buttons slot="end">
       <ion-button *ngIf="!showSearchbar" (click)="showSearchbar = true">
         <ion-icon slot="icon-only" name="search"></ion-icon>
@@ -24,19 +16,10 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-  <ion-toolbar>
-    <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
-      <ion-segment-button value="all">
-        Saptamanal
-      </ion-segment-button>
-      <ion-segment-button value="favorites">
-        Lunar
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen="true">
+  <!--
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Agenda</ion-title>
@@ -44,8 +27,19 @@
     <ion-toolbar>
       <ion-searchbar [(ngModel)]="queryText" (ionChange)="updateSchedule()" placeholder="Search"></ion-searchbar>
     </ion-toolbar>
-  </ion-header>
-  <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+  </ion-header>-->
+
+  <ion-item>
+    <ion-datetime value="{{startDate}}" displayFormat="DD MMM DDDD" pickerFormat="DD MM YYYY" max="2099-12-31" 
+    dayNames="Duminica, Luni, Marti, Miercuri, Joi, Vineri, Sambata" 
+    monthShortNames="ian, feb, mar, apr, mai, iun, iul, aug, sep, oct, noi, dec"
+    monthNames="Ianuarie, Februarie, Martie, Aprilie, Mai, Iunie, Iulie, August, Septembrie, Octombrie, Noiembrie, Decembrie"></ion-datetime>
+  
+    <ion-datetime value="{{endDate}}" displayFormat="DD MMM DDDD" pickerFormat="DD MM YYYY" max="2099-12-31"
+    dayNames="Duminica, Luni, Marti, Miercuri, Joi, Vineri, Sambata"
+    monthShortNames="ian, feb, mar, apr, mai, iun, iul, aug, sep, oct, noi, dec"
+    monthNames="Ianuarie, Februarie, Martie, Aprilie, Mai, Iunie, Iulie, August, Septembrie, Octombrie, Noiembrie, Decembrie"></ion-datetime>
+  </ion-item>
   <ion-list #scheduleList [hidden]="shownSessions === 0">
     <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
       <ion-item-divider sticky>
@@ -54,28 +48,19 @@
         </ion-label>
       </ion-item-divider>
 
-      <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="session.tracks[0] | lowercase"
+      <!--      <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="session.tracks[0] | lowercase"
+-->
+      <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="getDayOfWeek(session)"
         [hidden]="session.hide">
         <ion-item routerLink="/app/tabs/schedule/session/{{session.id}}">
           <ion-label>
             <h3>{{session.name}} - {{session.birthDate}}</h3>
             <p>
-              {{session.timeStart}} &mdash; {{session.timeEnd}}: {{session.procedureCode}}
+              {{session.timeStart}} &mdash; {{session.timeEnd}} Tel: {{session.phoneNumber}}
             </p>
-            <p>
-              <ion-icon name="call-outline"></ion-icon> {{session.phoneNumber}}
-            </p>
+            <p>{{session.tracks}}</p>
           </ion-label>
         </ion-item>
-        <ion-item-options>
-          <ion-item-option color="favorite" (click)="addFavorite(slidingItem, session)" *ngIf="segment === 'all'">
-            Favorite
-          </ion-item-option>
-          <ion-item-option color="danger" (click)="removeFavorite(slidingItem, session, 'Remove Favorite')"
-            *ngIf="segment === 'favorites'">
-            Remove
-          </ion-item-option>
-        </ion-item-options>
       </ion-item-sliding>
     </ion-item-group>
   </ion-list>

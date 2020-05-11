@@ -15,6 +15,9 @@ export class SchedulePage implements OnInit {
   // Gets a reference to the list element
   @ViewChild('scheduleList', { static: true }) scheduleList: IonList;
 
+  startDate = '2020-10-31';
+  endDate = '2020-10-31';
+
   ios: boolean;
   dayIndex = 0;
   queryText = '';
@@ -23,7 +26,7 @@ export class SchedulePage implements OnInit {
   shownSessions: any = [];
   groups: any = [];
   confDate: string;
-  showSearchbar: boolean;
+  showSearchbar: boolean = false;
 
   constructor(
     public alertCtrl: AlertController,
@@ -35,12 +38,21 @@ export class SchedulePage implements OnInit {
     public toastCtrl: ToastController,
     public user: UserData,
     public config: Config
-  ) { }
+  ) {
+    this.startDate = this.formatDate(new Date());
+    this.endDate = this.formatDate(this.addDays(new Date(), 28));
+   }
 
   ngOnInit() {
     this.updateSchedule();
 
     this.ios = this.config.get('mode') === 'ios';
+  }
+
+  onCancelFilter() {
+    this.showSearchbar = false;
+    this.queryText = '';
+    this.updateSchedule();
   }
 
   updateSchedule() {
@@ -136,5 +148,28 @@ export class SchedulePage implements OnInit {
     await loading.present();
     await loading.onWillDismiss();
     fab.close();
+  }
+
+  formatDate(date: Date) {
+    var month = '' + (date.getMonth() + 1),
+      day = '' + date.getDate(),
+      year = date.getFullYear();
+
+    if (month.length < 2)
+      month = '0' + month;
+    if (day.length < 2)
+      day = '0' + day;
+
+    return [year, month, day].join('-');
+  }
+
+  addDays(date: Date, days: number): Date {
+    date.setDate(date.getDate() + days);
+    return date;
+  }
+
+  getDayOfWeek(data){
+    let date = new Date(data.date);
+    return date.getDay();
   }
 }

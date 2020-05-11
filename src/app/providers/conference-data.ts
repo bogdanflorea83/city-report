@@ -60,6 +60,7 @@ export class ConferenceData {
     excludeTracks: any[] = [],
     segment = 'all'
   ) {
+    console.log("filter");
     return this.load().pipe(
       map((data: any) => {
         const day = data.schedule[dayIndex];
@@ -111,7 +112,7 @@ export class ConferenceData {
     // exclude tracks then this session passes the track test
     let matchesTracks = false;
     session.tracks.forEach((trackName: string) => {
-      if (excludeTracks.indexOf(trackName.toLowerCase()) === -1) {
+      if (excludeTracks.indexOf(trackName) === -1) {
         matchesTracks = true;
       }
     });
@@ -157,5 +158,49 @@ export class ConferenceData {
         return data.map;
       })
     );
+  }
+
+  getTimelineFromFirebase(
+    dayIndex: number,
+    queryText = '',
+    excludeTracks: any[] = [],
+    segment = 'all'
+  ) {
+    return this.load().pipe(
+      map((data: any) => {
+        const day = data.schedule[dayIndex];
+        day.shownSessions = 0;
+
+        queryText = queryText.toLowerCase().replace(/,|\.|-/g, ' ');
+        const queryWords = queryText.split(' ').filter(w => !!w.trim().length);
+
+        day.groups.forEach((group: any) => {
+          group.hide = true;
+
+          group.sessions.forEach((session: any) => {
+            // check if this session should show or not
+            this.filterSession(session, queryWords, excludeTracks, segment);
+
+            if (!session.hide) {
+              // if this session is not hidden then this group should show
+              group.hide = false;
+              day.shownSessions++;
+            }
+          });
+        });
+
+        return day;
+      })
+    );
+  }
+
+  loadFromFirebase(): any {
+    if (this.data) {
+      return of(this.data);
+    } else {
+      return this.http
+        .get('assets/data/firebase-data.json')
+        .pipe(map(this.processData, this));
+    }
   }
 }

@@ -27,7 +27,18 @@ $categories: (
   navigation: #6600cc
 );
 
-@each $track, $value in map-remove($categories) {
+$dayCategories: (
+  0: #fed035,
+  1: #ac282b,
+  2: #fd8b2d,
+  3: #fe4c52,
+  4: #69bb7b,
+  5: #3bc7c4,
+  6: #b16be3,
+  7: var(--ion-color-primary),
+);
+
+@each $track, $value in map-remove($dayCategories) {
   ion-item-sliding[track='#{$track}'] ion-label {
     border-left: 2px solid $value;
     padding-left: 10px;

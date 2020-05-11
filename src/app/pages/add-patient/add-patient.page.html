@@ -35,18 +35,12 @@
 
     <ion-item>
       <ion-label position="floating" color="primary">Data nasterii</ion-label>
-      <ion-datetime displayFormat="YYYY MMM DD" mode="ios" max="{{currentDate}}" formControlName="birthdate" placeholder="Data nasterii"></ion-datetime>
-
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating" color="primary">Telefon</ion-label>
-      <ion-input type="tel" formControlName="phone"></ion-input>
+      <ion-datetime displayFormat="DD MM YYYY" mode="ios" max="{{currentDate}}" formControlName="birthdate" placeholder="Data nasterii"></ion-datetime>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating" color="primary">Data programare</ion-label>
-      <ion-datetime displayFormat="YYYY MMM DD DDDD" mode="ios" min="{{currentDate}}" max="2099-12-31"
+      <ion-datetime displayFormat="DD MM YYYY DDDD" mode="ios" min="{{currentDate}}" max="2099-12-31"
         formControlName="appointmentDate" placeholder="Data" (ionChange)="appointmentDateSelected($event)"
         dayNames="Duminica, Luni, Marti, Miercuri, Joi, Vineri, Sambata"></ion-datetime>
     </ion-item>
@@ -72,6 +66,16 @@
      <!-- <ion-select multiple="true" formControlName="appointmentProcedures" cancelText="Cancel" okText="OK" >
         <ion-select-option *ngFor="let procedure of existingProceduresCatalog">{{procedure}}</ion-select-option>
       </ion-select>-->
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Telefon</ion-label>
+      <ion-input type="tel" formControlName="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
   
     <ion-item>
       <ion-label position="floating" color="primary">Diagnostic</ion-label>
@@ -80,7 +84,7 @@
 
     <ion-item>
       <ion-label position="floating" color="primary">Note</ion-label>
-      <ion-input type="text" formControlName="notes"></ion-input>
+      <ion-textarea formControlName="notes" placeholder="Note"></ion-textarea>
     </ion-item>
 
   </form>

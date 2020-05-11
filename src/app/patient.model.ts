@@ -13,6 +13,7 @@ export class Patient implements BaseEntity {
 }
 
 export class Appointment implements BaseEntity {
+    hide: boolean = false;
     constructor(
         public id?: string,
         public name?: string,
@@ -26,6 +27,8 @@ export class Appointment implements BaseEntity {
         public procedureYear?: number,
         public diagnostic?: string,
         public notes?: string,
+        public email?: string,
     ) {
+        this.hide = false;
     }
 }
