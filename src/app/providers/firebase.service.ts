@@ -30,6 +30,17 @@ export class FirebaseService {
     })
   }
 
+  createAppointment(value: Appointment){
+    return new Promise<any>((resolve, reject) => {
+      //let currentUser = firebase.auth().currentUser;
+      this.afs.collection('appointments').add(value)
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+  }
+
   getTimelineFromFirebase(
     startDate: Date,
     endDate: Date,

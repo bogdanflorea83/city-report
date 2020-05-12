@@ -6,6 +6,7 @@ import { ToastController } from '@ionic/angular';
 import { AssetsService } from '../../providers/assets.service';
 import { ProceduresAutocompleteService } from '../../providers/procedures-autocomplete.service';
 import { AutoCompleteComponent } from 'ionic4-auto-complete';
+import { FirebaseService } from '../../providers/firebase.service';
 
 @Component({
   selector: 'app-add-patient',
@@ -54,6 +55,7 @@ export class AddPatientPage implements OnInit {
     protected toastCtrl: ToastController,
     private assetsService: AssetsService,
     private autocompleteService: ProceduresAutocompleteService,
+    private firebaseService: FirebaseService,
   ) {
     this.currentDate = this.formatDate(new Date);
     this.existingProceduresCatalog = this.assetsService.procedures;
@@ -92,14 +94,15 @@ export class AddPatientPage implements OnInit {
   }
 
   save() {
-    const patient = this.createFromForm();
-    console.log(JSON.stringify(patient));
-    this.onSaveSuccess();
+    const appointment = this.createFromForm();
+    console.log(JSON.stringify(appointment));
+    this.onSaveSuccess(appointment);
   }
 
-  async onSaveSuccess() {
+  async onSaveSuccess(appointment: Appointment) {
     const toast = await this.toastCtrl.create({ message: `Pacient salvat cu success.`, duration: 2000, position: 'middle' });
     toast.present();
+    this.firebaseService.createAppointment(appointment);
     this.router.navigate(["/app/tabs/schedule"]);
   }
 
