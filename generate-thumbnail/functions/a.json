@@ -1,0 +1,19 @@
+{
+    "bucket": "doctor-b3f86.appspot.com",
+    "contentType": "image/jpeg",
+    "crc32c": "9jSipQ==",
+    "etag": "CMuz15uYr+kCEAE=",
+    "generation": "1589316198717899",
+    "id": "doctor-b3f86.appspot.com/tttt/sub/Skype-20200327-093523.jpeg/1589316198717899",
+    "kind": "storage#object",
+    "md5Hash": "hfUMLtHLZNzlYyErNDH//g==",
+    "mediaLink": "https://www.googleapis.com/download/storage/v1/b/doctor-b3f86.appspot.com/o/tttt%2Fsub%2FSkype-20200327-093523.jpeg?generation=1589316198717899&alt=media",
+    "metageneration": "1",
+    "name": "tttt/sub/Skype-20200327-093523.jpeg",
+    "selfLink": "https://www.googleapis.com/storage/v1/b/doctor-b3f86.appspot.com/o/tttt%2Fsub%2FSkype-20200327-093523.jpeg",
+    "size": "61131",
+    "storageClass": "STANDARD",
+    "timeCreated": "2020-05-12T20:43:18.717Z",
+    "timeStorageClassUpdated": "2020-05-12T20:43:18.717Z",
+    "updated": "2020-05-12T20:43:18.717Z"
+}

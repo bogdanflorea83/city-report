@@ -17,6 +17,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AutoCompleteModule } from 'ionic4-auto-complete';
+import { ImageModalPageModule } from './pages/image-modal/image-modal.module';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { AutoCompleteModule } from 'ionic4-auto-complete';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ImageModalPageModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase), // imports firebase/app

@@ -54,7 +54,11 @@
         [hidden]="session.hide">
         <ion-item routerLink="/app/tabs/schedule/session/{{session.id}}">
           <ion-label>
-            <h3>{{session.name}} - {{session.birthDate}}</h3>
+            <h3>
+              <ion-icon name="eye-outline" *ngIf="session.imgs != null && session.imgs.length>0" slot="start"></ion-icon>
+              <ion-icon name="eye-off-outline" *ngIf="session.imgs == null || session.imgs.length==0" slot="timeStart"></ion-icon>
+              {{session.name}} - {{session.birthDate}} 
+            </h3>
             <p>
               {{session.timeStart}} &mdash; {{session.timeEnd}} Tel: {{session.phoneNumber}}
             </p>

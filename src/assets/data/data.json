@@ -18,7 +18,33 @@
               "timeEnd": "9:00 am",
               "location": "Cabinet 1",
               "tracks": ["Remodelare lob nazal"],
-              "id": "1"
+              "id": "1",
+              "imgs": [
+                {
+                  "thumbUrl": "assets/img/1.JPG",
+                  "url": "assets/img/1.JPG"
+                },
+                {
+                  "thumbUrl": "assets/img/2.JPG",
+                  "url": "assets/img/2.JPG"
+                },
+                {
+                  "thumbUrl": "assets/img/3.JPG",
+                  "url": "assets/img/3.JPG"
+                },
+                {
+                  "thumbUrl": "https://storage.googleapis.com/doctor-b3f86.appspot.com/rinoplastie/bogdan%20florea%20-%2003.08.1983/thumb_DSC_1335.JPG?GoogleAccessId=doctor-b3f86%40appspot.gserviceaccount.com&Expires=16730323200&Signature=r1kQ7lqvmEz7yOhn2sROY4n7GQR6Q%2Bd4WHue4FuKGD01C42znkFnP3G4GsnwyUyvpUJI33%2BVD94ZHayiIoew8W8eQcutLLGZqmLO%2BjuA8FprN%2BU32%2BY9y%2BqwgEAA4O0GJBd2o0qmGZJ81i0hUwxJhHhE7xNKjXEd3V23yhr5ySZDGH4Q64jcZOivgQiUdYhhHKV9%2FlaNggL0tpWFu%2BniFPTqpf8GdhWx9BEn%2BLWJqam4WvnoCp2y3O948goURBKwGnNP3GAkNonLSQ%2FfAWnHNgUC9CV27wE2oozFapT5IJ%2BehxjA7qUHT%2F%2Bjto%2Bx7agKzuSCDK2efOhMNA7M%2Bx9kIw%3D%3D",
+                  "url": "https://storage.googleapis.com/doctor-b3f86.appspot.com/rinoplastie/bogdan%20florea%20-%2003.08.1983/DSC_1335.JPG?GoogleAccessId=doctor-b3f86%40appspot.gserviceaccount.com&Expires=16730323200&Signature=Dbi4S3moIE2yRuj31Iqca1Gu7uTqOAxDdbPALRrU3plsOuBbMfefpdYz3SLDHziIxG8ZcMUvLKeE0mFxzcXTjxpRkMF6mOEYpx7WfEGlOX1dBRiN1p10oHnW8Ey0lzv7LWu%2Fo74qJUGHwY1%2FiiySwLwmLCSNLdKIReKkvW9QNMlTyregWZvL1%2FhTt2a2%2FhURk7cj6UHBCs7KNrkPR02r%2BDSTS4%2FJVbbD89ZwBrUJAH%2BZe3WgcCTe2t8gfct7i%2FbOSXAHD2j9YHeG1qwcviAHx73J8NnA5Y56LMroNy3nfkmoDsEQx039r24oqw34Tn20Xe5rZL6pYiUleKJ6lkfBhQ%3D%3D"
+                },
+                {
+                  "thumbUrl": "https://storage.googleapis.com/doctor-b3f86.appspot.com/rinoplastie/bogdan%20florea%20-%2003.08.1983/thumb_DSC_1334.JPG?GoogleAccessId=doctor-b3f86%40appspot.gserviceaccount.com&Expires=16730323200&Signature=gWSm6cj8zXERqSsrn4e0l9cw8AuwxXgWyNpfBAip%2FQp0MV779OoYziMCQ9eAFA1D5rM1VX6nRS6k2PKxcA234DRZr4lvlsyQ8eVVzsp%2B5yzUAHHiJsOWfmZ4yZ53LYOOu9EyvbizMWtqfBwjwf%2B8YkVEHnoaLqS4VNYejfOw837syeneYP%2FxupaRxn6AqUdfFv3BtyzYJCFjmetn2fhw8eDsctYz%2F%2Fns3JYIRhfbErDpIFoUzCbCpbdWyQ%2BlkZ40hY4JPgrp3VzslUgMutaJgxzQMQ6ThLm%2Fh0tcIyCisUnPy8O%2FlIKMLtRKcw5vTFHgNpFMArZFXujUclO31GkKEw%3D%3D",
+                  "url": "https://storage.googleapis.com/doctor-b3f86.appspot.com/rinoplastie/bogdan%20florea%20-%2003.08.1983/DSC_1334.JPG?GoogleAccessId=doctor-b3f86%40appspot.gserviceaccount.com&Expires=16730323200&Signature=kMEUyuXxq7x6gsUoXsPWZMxHkBXTB3e4t6Rl6FdlwmOaS0V4lpyl%2B0HSkNP9wB2VDm7CfGKD5HllqChS7tU9qR7rdE%2F5XWqrcbjbz%2BUQrOzYCayNuPGwbzv8c2hCqqH0aLG7%2BpAJ8%2F1aMJj2KkJKGWiXf5NXSTp%2BRNOwlvz%2BxjRvapnzEJU0Aqr8hXQTNvs7uZzDwKq%2B0Q2459btOna2ICFxSD5ujGP4XJQp%2FqGC7j3hYWDTr2MB9VedtU9pXhUrfOQTU8gJ6yEohZhfVv3NZapCPptorbj5zBiSNdRVDSWjClPhqKQmTRO27u%2FrCJizKUygfnmCD0rvAk9n0HQW4Q%3D%3D"
+                },
+                {
+                  "thumbUrl": "https://storage.googleapis.com/doctor-b3f86.appspot.com/rinoplastie/bogdan%20florea%20-%2003.08.1983/thumb_DSC_1336.JPG?GoogleAccessId=doctor-b3f86%40appspot.gserviceaccount.com&Expires=16730323200&Signature=T2ASRh5oouuKyJ7i1R5ydejZ73heQOHRaR6u98kipdZ72ebroAt2%2BokjPXovN%2Fk7C70za%2BNtQKobKkcf9FCUZlnTaSWkEnBdC3nWYJfuCs25IqecOtm93z0UfkTfboj%2Bac7xZUpC8xYhFs7W75D9JjzLPcfX%2Fgzi1AYdWNU1GJuaW6uYk4sp3q2hhAzq8zF1%2FudB9dU9Uht3v7U9CT1Nt3KFb3AfT%2BhDD7IJAFMXQZJ6GSLY7%2ByhVGS95zxFsazB3D6KR3OBjaR0O5eNsVjJAObYdH%2Bo2BomwMNrnIKoIgwAOU1KNgfIY%2FG8dUl3TiZxrpYnOc9n0q7fAhNFFREezw%3D%3D",
+                  "url": "https://storage.googleapis.com/doctor-b3f86.appspot.com/rinoplastie/bogdan%20florea%20-%2003.08.1983/DSC_1336.JPG?GoogleAccessId=doctor-b3f86%40appspot.gserviceaccount.com&Expires=16730323200&Signature=En0u9d2sYabuETqChNJH1WIfibgJ%2BFC2aum5OQzM540vUViGhxs0dr%2BZuYbujhdz81E5rVHlN8xhVKrmxxoUQfCorYKKnghBdH6jmKmZ33bblzje3zWakoF7UztNT8BQFaIW4ec%2FcYYPUJP4MSzMkpf9jwX%2FhBxL2%2BIQXL7zc3BV6JQgSTCpjioVW4rYVt1cUG3OLZ1X4Rr%2B1n2eoDw%2B6FfqKCBzpxBAmL9hrLxT1llVTlVZ9QLFieZa6QxiRf0tp96pRUY%2FJuv0tcjtXQ74NqhKgEkKjXenJLvqa0RKHHc0yZmr%2BxG6WoUWIFb0YBJeeJ67Zxb%2BUFika16RIhOtLQ%3D%3D"
+                }
+              ]
             }
           ]
         },

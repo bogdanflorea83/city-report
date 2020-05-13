@@ -37,6 +37,10 @@ const routes: Routes = [
     path: 'add-patient',
     loadChildren: () => import('./pages/add-patient/add-patient.module').then( m => m.AddPatientPageModule)
   },
+  {
+    path: 'image-modal',
+    loadChildren: () => import('./pages/image-modal/image-modal.module').then( m => m.ImageModalPageModule)
+  },
 ];
 
 @NgModule({

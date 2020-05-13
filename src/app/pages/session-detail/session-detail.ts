@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { ConferenceData } from '../../providers/conference-data';
 import { ActivatedRoute } from '@angular/router';
 import { UserData } from '../../providers/user-data';
-import { ToastController } from '@ionic/angular';
+import { ToastController, ModalController } from '@ionic/angular';
+import { ImageModalPage } from '../image-modal/image-modal.page';
 
 @Component({
   selector: 'page-session-detail',
@@ -15,12 +16,22 @@ export class SessionDetailPage {
   isFavorite = false;
   defaultHref = '';
 
+  sliderOpts={
+    zoom: false,
+    slidesPerView: 1.5,
+    centeredSlides: true,
+    spaceBetween: 20
+  }
+
   constructor(
     private dataProvider: ConferenceData,
     private userProvider: UserData,
     private route: ActivatedRoute,
     private toastCtrl: ToastController,
-  ) { }
+    private modalController: ModalController
+  ) { 
+    
+  }
 
   ionViewWillEnter() {
     this.dataProvider.load().subscribe((data: any) => {
@@ -74,5 +85,16 @@ export class SessionDetailPage {
     }else{
       console.log('phone call');
     }
+  }
+
+ 
+
+  openPreview(img){
+    this.modalController.create({
+      component: ImageModalPage,
+      componentProps: {
+        img: img
+      }
+    }).then(modal => modal.present());
   }
 }
