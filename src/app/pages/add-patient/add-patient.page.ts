@@ -107,8 +107,6 @@ export class AddPatientPage implements OnInit {
   }
 
   private createFromForm(): Appointment {
-    //let procedures: [] = [];
-    //procedures.push[this.form.get(['name']).value];
     let time = new Date(this.form.get(['appointmentDateTime']).value);
     let duration = this.form.get(['appointmentDuration']).value;
     let endTime = new Date (time.getTime() + duration*60*1000);
@@ -117,17 +115,16 @@ export class AddPatientPage implements OnInit {
       ...new Appointment(),
       id: null,
       name: this.form.get(['name']).value,
-      birthdate: this.form.get(['birthdate']).value,
+      birthdate: new Date(this.form.get(['birthdate']).value),
       phone: this.form.get(['phone']).value,
-      procedure: this.searchbar.selected,
+      email: this.form.get(['email']).value,
       procedures: this.searchbar.selected,
-      procedureStartDateTime: this.form.get(['appointmentDateTime']).value,
+      procedureStartDateTime: time,
       procedureEndDateTime: endTime,
       procedureMonth: time.getMonth(),
       procedureYear: time.getFullYear(),
       diagnostic: this.form.get(['diagnostic']).value,
       notes: this.form.get(['notes']).value,
-      email: this.form.get(['email']).value,
     };
   }
 

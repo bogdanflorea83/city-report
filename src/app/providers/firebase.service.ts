@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, DocumentSnapshot, DocumentData, QuerySnapshot } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentSnapshot, DocumentData, QuerySnapshot, Query, SetOptions, DocumentReference } from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as _ from 'lodash';
-import { Appointment } from '../patient.model';
+import { Appointment, Patient } from '../patient.model';
 import { UserData } from './user-data';
 
+const setOptions : SetOptions = {merge: true};
 @Injectable({
   providedIn: 'root'
 })
@@ -32,13 +33,70 @@ export class FirebaseService {
 
   createAppointment(value: Appointment){
     return new Promise<any>((resolve, reject) => {
-      //let currentUser = firebase.auth().currentUser;
-      this.afs.collection('appointments').add(value)
-      .then(
+      value.id = this.getAppointmentKey(value.name, value.birthdate, value.procedureStartDateTime);
+      let patient = this.transformAppointmentToPatient(value);
+      // todo reuse old procedures
+      const patDocRef: DocumentReference = firebase.firestore().doc("patients" + "/" + patient.id);
+      patDocRef.set(patient, setOptions)
+      .catch((err) => {
+          console.log("Error updating info about a patient :" + patient.id + " with message " + err);
+      });
+
+      const docRef: DocumentReference = firebase.firestore().doc("appointments" + "/" + value.id );
+      docRef.set(value, setOptions).
+      then(
         res => resolve(res),
-        err => reject(err)
-      )
+        err => reject(err))
+      .catch((err) => {
+          console.log("Error updating info about a vehicle :" + value.id + " with message " + err);
+      });
+
+      
     })
+  }
+
+  transformAppointmentToPatient(appointment: Appointment): Patient {
+    let appointments: Appointment[] = [];
+    appointments.push(appointment);
+    return {
+      ...new Patient(),
+      id: this.getPatientKey(appointment.name, appointment.birthdate),
+      name: appointment.name,
+      birthdate: appointment.birthdate,
+      phone: appointment.phone,
+      email: appointment.email,
+      procedures: appointment.procedures,
+      appointments: appointments,
+    };
+  }
+
+  getPatientKey(patientName: string, birthDate: Date){
+    let key = '';
+    if(patientName){
+      key = patientName;
+    }
+    if(birthDate){
+      key = key+"-"+this.formatDate(birthDate);
+    }
+
+    if(key.trim().length == 0){
+      return 'key';
+    }
+
+    return key.trim().toLowerCase();
+  }
+
+  getAppointmentKey(patientName: string, birthDate: Date, startDate: Date){
+    let key = this.getPatientKey(patientName, birthDate);
+    if(startDate){
+      key = key+"-"+this.formatDate(startDate);
+    }
+
+    if(key.trim().length == 0){
+      return 'key';
+    }
+
+    return key.trim().toLowerCase();
   }
 
   getTimelineFromFirebase(
@@ -55,6 +113,40 @@ export class FirebaseService {
 
       this.afs.collection('appointments').ref.where('procedureStartDateTime', '>=', startDate).
         where('procedureStartDateTime', '<=', endDate).get()
+        .then((querySnapshot: QuerySnapshot<any>) => {
+          querySnapshot.forEach((doc) => {
+            console.log(doc.id, " => ", doc.data());
+            let data = doc.data();
+            let appoinment: Appointment = new Appointment();
+            appoinment = _.merge({}, appoinment, data);
+            let dateKey = this.formatDate(appoinment.procedureStartDateTime);
+            if(!appointmentsMap.has(dateKey)){
+              appointmentsMap.set(dateKey, []);
+            }
+            let appointmentPerDay : Appointment[] = appointmentsMap.get(dateKey);
+            this.filterSession(appoinment, queryWords, excludeTracks);
+            appointmentPerDay.push(appoinment);
+          });
+        });
+      resolve(appointmentsMap);
+    });
+  }
+
+  getPatientsFromFirebase(
+    queryText = '',
+    excludeTracks: any[] = [],
+  ) {
+    queryText = queryText.toLowerCase().replace(/,|\.|-/g, ' ');
+    const queryWords = queryText.split(' ').filter(w => !!w.trim().length);
+
+    return new Promise<any>((resolve, reject) => {
+      let appointmentsMap: Map<String, Appointment[]> = new Map<String, Appointment[]>();
+      let query: Query = this.afs.collection('appointments').ref.
+          where('name', '>=', queryText);
+      if(true){
+        query = query.where('procedures', 'array-contains',['west_coast', 'east_coast']);
+      }
+      query.get()
         .then((querySnapshot: QuerySnapshot<any>) => {
           querySnapshot.forEach((doc) => {
             console.log(doc.id, " => ", doc.data());

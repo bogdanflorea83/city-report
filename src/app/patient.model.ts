@@ -7,7 +7,9 @@ export class Patient implements BaseEntity {
         public name?: string,
         public birthdate?: Date,
         public phone?: string,
+        public email?: string,
         public procedures?: [],
+        public appointments?: Appointment[],
     ) {
     }
 }
@@ -19,7 +21,7 @@ export class Appointment implements BaseEntity {
         public name?: string,
         public birthdate?: Date,
         public phone?: string,
-        public procedure?: string,
+        public email?: string,
         public procedures?: [],
         public procedureStartDateTime?: Date,
         public procedureEndDateTime?: Date,
@@ -27,7 +29,6 @@ export class Appointment implements BaseEntity {
         public procedureYear?: number,
         public diagnostic?: string,
         public notes?: string,
-        public email?: string,
     ) {
         this.hide = false;
     }
