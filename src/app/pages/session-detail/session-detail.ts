@@ -20,7 +20,8 @@ export class SessionDetailPage {
     zoom: false,
     slidesPerView: 1.5,
     centeredSlides: true,
-    spaceBetween: 20
+    spaceBetween: 20,
+    passiveListeners: false,
   }
 
   constructor(
@@ -94,7 +95,8 @@ export class SessionDetailPage {
       component: ImageModalPage,
       componentProps: {
         img: img
-      }
+      },
+      cssClass: "modal-fullscreen"
     }).then(modal => modal.present());
   }
 }

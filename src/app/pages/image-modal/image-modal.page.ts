@@ -13,7 +13,7 @@ export class ImageModalPage implements OnInit {
   @ViewChild('slider', { read: ElementRef, static: true })slider: ElementRef;
   sliderOps={
     zoom: {
-      maxRation: 8
+      maxRation: 15
     }
   }
 
