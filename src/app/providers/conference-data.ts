@@ -4,6 +4,8 @@ import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { UserData } from './user-data';
+import { FirebaseService } from './firebase.service';
+import { Appointment } from '../patient.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,9 @@ import { UserData } from './user-data';
 export class ConferenceData {
   data: any;
 
-  constructor(public http: HttpClient, public user: UserData) {}
+  constructor(public http: HttpClient,
+    public user: UserData,
+    private firebaseService: FirebaseService) {}
 
   load(): any {
     if (this.data) {
@@ -161,46 +165,38 @@ export class ConferenceData {
   }
 
   getTimelineFromFirebase(
-    dayIndex: number,
+    startDate: Date,
+    endDate: Date,
     queryText = '',
     excludeTracks: any[] = [],
-    segment = 'all'
-  ) {
-    return this.load().pipe(
-      map((data: any) => {
-        const day = data.schedule[dayIndex];
-        day.shownSessions = 0;
+  ) : Promise<Map<String, Appointment[]>> {
 
-        queryText = queryText.toLowerCase().replace(/,|\.|-/g, ' ');
-        const queryWords = queryText.split(' ').filter(w => !!w.trim().length);
-
-        day.groups.forEach((group: any) => {
-          group.hide = true;
-
-          group.sessions.forEach((session: any) => {
-            // check if this session should show or not
-            this.filterSession(session, queryWords, excludeTracks, segment);
-
-            if (!session.hide) {
-              // if this session is not hidden then this group should show
-              group.hide = false;
-              day.shownSessions++;
-            }
-          });
-        });
-
-        return day;
-      })
-    );
+    return this.firebaseService.getTimelineFromFirebase(
+      startDate,
+      endDate,
+      queryText,
+      excludeTracks)
+      .then((map:Map<String, Appointment[]>) => {
+        this.lastLoadedMap = map;
+          return map;
+      });
   }
 
-  loadFromFirebase(): any {
-    if (this.data) {
-      return of(this.data);
-    } else {
-      return this.http
-        .get('assets/data/firebase-data.json')
-        .pipe(map(this.processData, this));
+  lastLoadedMap:Map<String, Appointment[]>;
+
+  getAppointmentFromCache(id: String): any{
+    if(!this.lastLoadedMap){
+      return {};
     }
+    let result = {};
+    this.lastLoadedMap.forEach((value: Appointment[], key: string) => {
+      let groupHide = true;
+      value.forEach((app: Appointment) => {
+        if(app.id == id){
+          result = app;
+        }
+      });
+    });
+    return result;
   }
 }

@@ -12,6 +12,7 @@ import { SessionDetailModule } from '../session-detail/session-detail.module';
 import { PatientDetailModule } from '../patient-detail/patient-detail.module';
 import { PatientListModule } from '../patient-list/patient-list.module';
 import { AddPatientPageModule } from '../add-patient/add-patient.module';
+import { EditPatientAppointmentPageModule } from '../edit-patient-appointment/edit-patient-appointment.module';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { AddPatientPageModule } from '../add-patient/add-patient.module';
     PatientDetailModule,
     PatientListModule,
     AddPatientPageModule,
+    EditPatientAppointmentPageModule,
     TabsPageRoutingModule
   ],
   declarations: [

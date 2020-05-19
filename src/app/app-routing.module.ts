@@ -38,6 +38,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/add-patient/add-patient.module').then( m => m.AddPatientPageModule)
   },
   {
+    path: 'edit-patient-appointment/:sessionId',
+    loadChildren: () => import('./pages/edit-patient-appointment/edit-patient-appointment.module').then( m => m.EditPatientAppointmentPageModule)
+  },
+  {
     path: 'image-modal',
     loadChildren: () => import('./pages/image-modal/image-modal.module').then( m => m.ImageModalPageModule)
   },

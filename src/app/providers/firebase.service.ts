@@ -104,21 +104,33 @@ export class FirebaseService {
     endDate: Date,
     queryText = '',
     excludeTracks: any[] = [],
-  ) {
+  ): Promise<Map<String, Appointment[]>> {
     queryText = queryText.toLowerCase().replace(/,|\.|-/g, ' ');
     const queryWords = queryText.split(' ').filter(w => !!w.trim().length);
 
-    return new Promise<any>((resolve, reject) => {
+    return new Promise<Map<String, Appointment[]>>((resolve, reject) => {
       let appointmentsMap: Map<String, Appointment[]> = new Map<String, Appointment[]>();
 
-      this.afs.collection('appointments').ref.where('procedureStartDateTime', '>=', startDate).
-        where('procedureStartDateTime', '<=', endDate).get()
+      let query: Query = this.afs.collection('appointments').ref
+        //where('name', '>=', queryText); -- firebase does not allow
+        .where('procedureStartDateTime', '>=', startDate)
+        .where('procedureStartDateTime', '<=', endDate);
+      if(false){
+        query = query.where('procedures', 'array-contains',['Rinoplastie secundară', 'Abdominoplastie radicală + Cura herniei ombilicale (cu dr. Ralea)']);
+      }
+
+      query
+        .get()
         .then((querySnapshot: QuerySnapshot<any>) => {
           querySnapshot.forEach((doc) => {
             console.log(doc.id, " => ", doc.data());
             let data = doc.data();
             let appoinment: Appointment = new Appointment();
             appoinment = _.merge({}, appoinment, data);
+            appoinment.birthdate = data.birthdate.toDate();
+            appoinment.procedureStartDateTime = data.procedureStartDateTime.toDate();
+            appoinment.procedureEndDateTime = data.procedureEndDateTime.toDate();
+
             let dateKey = this.formatDate(appoinment.procedureStartDateTime);
             if(!appointmentsMap.has(dateKey)){
               appointmentsMap.set(dateKey, []);
@@ -127,8 +139,8 @@ export class FirebaseService {
             this.filterSession(appoinment, queryWords, excludeTracks);
             appointmentPerDay.push(appoinment);
           });
+          resolve(appointmentsMap);
         });
-      resolve(appointmentsMap);
     });
   }
 
@@ -188,7 +200,7 @@ export class FirebaseService {
     // exclude tracks then this session passes the track test
     let matchesTracks = false;
     session.procedures.forEach((procedureName: string) => {
-      if (excludeTracks.indexOf(procedureName.toLowerCase()) === -1) {
+      if (excludeTracks.indexOf(procedureName) === -1) {
         matchesTracks = true;
       }
     });

@@ -19,6 +19,10 @@ const routes: Routes = [
           {
             path: 'session/:sessionId',
             loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
+          },
+          {
+            path: 'edit-patient-appointment/:sessionId',
+            loadChildren: () => import('../edit-patient-appointment/edit-patient-appointment.module').then(m => m.EditPatientAppointmentPageModule)
           }
         ]
       },

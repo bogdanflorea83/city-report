@@ -35,26 +35,8 @@ export class SessionDetailPage {
   }
 
   ionViewWillEnter() {
-    this.dataProvider.load().subscribe((data: any) => {
-      if (data && data.schedule && data.schedule[0] && data.schedule[0].groups) {
-        const sessionId = this.route.snapshot.paramMap.get('sessionId');
-        for (const group of data.schedule[0].groups) {
-          if (group && group.sessions) {
-            for (const session of group.sessions) {
-              if (session && session.id === sessionId) {
-                this.session = session;
-
-                this.isFavorite = this.userProvider.hasFavorite(
-                  this.session.name
-                );
-
-                break;
-              }
-            }
-          }
-        }
-      }
-    });
+    const sessionId = this.route.snapshot.paramMap.get('sessionId');
+    this.session = this.dataProvider.getAppointmentFromCache(sessionId);
   }
 
   ionViewDidEnter() {
@@ -98,5 +80,34 @@ export class SessionDetailPage {
       },
       cssClass: "modal-fullscreen"
     }).then(modal => modal.present());
+  }
+  formatDate(date: Date) {
+    if(!date){
+      return '';
+    }
+    var month = '' + (date.getMonth() + 1),
+      day = '' + date.getDate(),
+      year = date.getFullYear();
+
+    if (month.length < 2)
+      month = '0' + month;
+    if (day.length < 2)
+      day = '0' + day;
+
+    return [year, month, day].join('-');
+  }
+
+  formatTime(date: Date) {
+    if(!date){
+      return '';
+    }
+    var hours = '' + date.getHours(),
+      minutes = '' + date.getMinutes();
+    if (hours.length < 2)
+      hours = '0' + hours;
+    if (minutes.length < 2)
+      minutes = '0' + minutes;
+
+    return [hours, minutes].join('-');
   }
 }

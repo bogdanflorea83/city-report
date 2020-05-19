@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button  (click)="cancel()">
+          <span>Anulare</span>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>
+          Editare pacient
+      </ion-title>
+
+      <ion-buttons slot="end">
+          <ion-button  (click)="save()">
+            <span>Salvare</span>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding >
+
+  <form [formGroup]="form" name="form" (ngSubmit)="save()">
+
+    <ion-label position="floating" color="primary" style="padding-left: 5%;">Pacient</ion-label>
+    <ion-auto-complete 
+      [dataProvider]="autocompleteService"
+      [emptyTemplate]="empty"
+      [options]="{searchIcon: 'assets/img/add-user.svg'}"
+      formControlName="appointmentPatient" style="padding-left: 5%;"></ion-auto-complete>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Nume</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Data nasterii</ion-label>
+      <ion-datetime displayFormat="DD MM YYYY" mode="ios" max="{{currentDate}}" formControlName="birthdate" placeholder="Data nasterii"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Data programare</ion-label>
+      <ion-datetime displayFormat="DD MM YYYY DDDD" mode="ios" min="{{currentDate}}" max="2099-12-31"
+        formControlName="appointmentDate" placeholder="Data" (ionChange)="appointmentDateSelected($event)"
+        dayNames="Duminica, Luni, Marti, Miercuri, Joi, Vineri, Sambata"></ion-datetime>
+    </ion-item>
+
+    <ion-item *ngIf="appointmentDateValue">
+      <ion-label position="floating" color="primary">Ora programare</ion-label>
+      <ion-datetime displayFormat="H:mm a" minuteValues="0,15,30,45" mode="ios" value="{{appointmentDateValue}}" formControlName="appointmentDateTime" placeholder="Ora"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Durata programare (minute)</ion-label>
+      <ion-input type="number" formControlName="appointmentDuration"></ion-input>
+    </ion-item>
+
+      <ion-label position="floating" color="primary" style="padding-left: 5%;">Proceduri</ion-label>
+      <ion-auto-complete 
+      [multi]="true"
+      [dataProvider]="autocompleteService"
+      [disabled]="false"
+      [emptyTemplate]="empty"
+      formControlName="appointmentProcedures"
+      hideListOnSelection="false" style="padding-left: 5%;" #searchbar></ion-auto-complete>
+     <!-- <ion-select multiple="true" formControlName="appointmentProcedures" cancelText="Cancel" okText="OK" >
+        <ion-select-option *ngFor="let procedure of existingProceduresCatalog">{{procedure}}</ion-select-option>
+      </ion-select>-->
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Telefon</ion-label>
+      <ion-input type="tel" formControlName="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating" color="primary">Diagnostic</ion-label>
+      <ion-input type="text" formControlName="diagnostic"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Note</ion-label>
+      <ion-textarea formControlName="notes" placeholder="Note"></ion-textarea>
+    </ion-item>
+
+  </form>
+</ion-content>

@@ -5,6 +5,7 @@ import { AlertController, IonList, IonRouterOutlet, LoadingController, ModalCont
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
+import { Appointment } from '../../patient.model';
 
 @Component({
   selector: 'page-schedule',
@@ -23,8 +24,8 @@ export class SchedulePage implements OnInit {
   queryText = '';
   segment = 'all';
   excludeTracks: any = [];
-  shownSessions: any = [];
-  groups: any = [];
+  shownSessions: number = 0;
+  groups: any[] = [];
   confDate: string;
   showSearchbar: boolean = false;
 
@@ -61,10 +62,58 @@ export class SchedulePage implements OnInit {
       this.scheduleList.closeSlidingItems();
     }
 
-    this.confData.getTimeline(this.dayIndex, this.queryText, this.excludeTracks, this.segment).subscribe((data: any) => {
-      this.shownSessions = data.shownSessions;
-      this.groups = data.groups;
+    // this.confData.getTimeline(this.dayIndex, this.queryText, this.excludeTracks, this.segment).subscribe((data: any) => {
+    //   this.shownSessions = data.shownSessions;
+    //   this.groups = data.groups;
+    // });
+    let startDate = new Date(this.startDate);
+    startDate.setHours(0, 1, 1);
+    let endDate = new Date(this.endDate);
+    endDate.setHours(23, 59, 59);
+    this.confData.getTimelineFromFirebase(startDate, endDate, 
+      this.queryText, this.excludeTracks).then((data: Map<String, Appointment[]>) => {
+        let newShownSessions = 0;
+        let newGroups: any[] = [];
+      data.forEach((value: Appointment[], key: string) => {
+        let groupHide = true;
+        value.forEach((app: Appointment) => {
+          if(!app.hide){
+            newShownSessions = newShownSessions+1;
+            groupHide = false;
+          }
+        });
+        newGroups.push({
+          hide: groupHide,
+          sessions: value,
+          time: this.getDayLabel(key)
+        });
+      });
+      this.shownSessions = newShownSessions;
+      this.groups = newGroups;
     });
+  }
+
+  getDayLabel(groupDate: string): String {
+    let date = new Date(groupDate);
+    let day = date.getDay();
+    switch (day) {
+      case 0:
+        return "Duminica " + groupDate
+      case 1:
+        return "Luni " + groupDate
+      case 2:
+        return "Marti " + groupDate
+      case 3:
+        return "Miercuri " + groupDate
+      case 4:
+        return "Joi " + groupDate
+      case 5:
+        return "Vineri " + groupDate
+      case 6:
+        return "Sambata " + groupDate
+      default:
+        return groupDate;
+    }
   }
 
   async presentFilter() {
@@ -151,6 +200,9 @@ export class SchedulePage implements OnInit {
   }
 
   formatDate(date: Date) {
+    if(!date){
+      return '';
+    }
     var month = '' + (date.getMonth() + 1),
       day = '' + date.getDate(),
       year = date.getFullYear();
@@ -163,13 +215,31 @@ export class SchedulePage implements OnInit {
     return [year, month, day].join('-');
   }
 
+  formatTime(date: Date) {
+    if(!date){
+      return '';
+    }
+    var hours = '' + date.getHours(),
+      minutes = '' + date.getMinutes();
+    if (hours.length < 2)
+      hours = '0' + hours;
+    if (minutes.length < 2)
+      minutes = '0' + minutes;
+
+    return [hours, minutes].join('-');
+  }
+
   addDays(date: Date, days: number): Date {
     date.setDate(date.getDate() + days);
     return date;
   }
 
   getDayOfWeek(data){
-    let date = new Date(data.date);
-    return date.getDay();
+    if(!data.procedureStartDateTime){
+      return 0;
+    }
+    
+
+    return data.procedureStartDateTime.getDay();
   }
 }

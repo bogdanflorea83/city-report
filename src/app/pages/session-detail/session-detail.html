@@ -4,12 +4,14 @@
       <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button (click)="toggleFavorite()">
-        <ion-icon *ngIf="!isFavorite" slot="icon-only" name="star-outline"></ion-icon>
-        <ion-icon *ngIf="isFavorite" slot="icon-only" name="star"></ion-icon>
+      <ion-button (click)="phoneCall()">
+        <ion-icon slot="icon-only" name="call-outline"></ion-icon>
       </ion-button>
-      <ion-button (click)="shareSession()">
-        <ion-icon slot="icon-only" name="share"></ion-icon>
+      <ion-button>
+        <ion-icon slot="icon-only" name="pencil-outline" routerLink="/app/tabs/speakers/edit-patient-appointment/{{session?.id}}"></ion-icon>
+      </ion-button>
+      <ion-button (click)="sessionClick('trash')">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -18,28 +20,16 @@
 <ion-content>
   <div *ngIf="session" class="ion-padding">
     <h1>{{session.name}}</h1>
-    <span *ngFor="let track of session?.tracks" [class]="'session-track-'+track.toLowerCase()">{{track}}</span>
-    <p>{{session.description}}</p>
+    <span *ngFor="let track of session?.procedures" [class]="'session-track-'+track.toLowerCase()">{{track}}</span>
     <ion-text color="medium">
-      {{session.timeStart}} &ndash; {{session.timeEnd}}
+      {{formatTime(session.procedureStartDateTime)}} &mdash; {{formatTime(session.procedureEndDateTime)}} Tel: {{session.phone}}
       <br /> {{session.location}}
     </ion-text>
+    <p>Telefon: {{session.phone}}</p>
+    <p>Email: {{session.email}}</p>
+    <p>Diagnostic: {{session.diagnostic}}</p>
+    <p>Note: {{session.notes}}</p>
   </div>
-
-  <ion-list>
-    
-    <ion-item (click)="sessionClick('add to calendar')" button>
-      <ion-label color="primary">Anuleaza</ion-label>
-    </ion-item>
-    <ion-item (click)="phoneCall()" button>
-      <ion-label color="primary">Suna</ion-label>
-      <ion-icon slot="end" color="primary" size="small" name="call-outline"></ion-icon>
-    </ion-item>
-    <ion-item (click)="sessionClick('download video')" button>
-      <ion-label color="primary">Download Foto</ion-label>
-      <ion-icon slot="end" color="primary" size="small" name="cloud-download"></ion-icon>
-    </ion-item>
-  </ion-list>
 
   <ion-slides [options]="sliderOpts"> 
     <ion-slide *ngFor="let img of session?.imgs">
