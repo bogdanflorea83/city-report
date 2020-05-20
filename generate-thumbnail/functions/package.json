@@ -5,7 +5,8 @@
     "child-process-promise": "^2.2.1",
     "mkdirp": "^1.0.3",
     "firebase-admin": "~8.9.2",
-    "firebase-functions": "^3.3.0"
+    "firebase-functions": "^3.3.0",
+    "@angular/fire": "^5.4.2"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

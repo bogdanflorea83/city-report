@@ -49,7 +49,7 @@ exports.generateThumbnail = functions.storage.object().onFinalize(async (object)
 
   // Exit if this is triggered on a file that is not an image.
   if (!contentType.startsWith('image/')) {
-    return console.log('This is not an image.');
+    return console.log('This is not an image: ' + contentType);
   }
 
   // Exit if the image is already a thumbnail.
@@ -98,11 +98,10 @@ exports.generateThumbnail = functions.storage.object().onFinalize(async (object)
   // Add the URLs to the Database
   var res = filePath.split("/");
   if(res.length <= 1){
-    return console.log('Doar pacient sau procedura a fost completat: ' + filePath);
+    return console.log('Doar pacient name sau procedura a fost completat: ' + filePath);
   }
   var procedure = res[0];
   var patient = res[1];
-  var originalFileName = res[res.length-1];
   var patientDetails = patient.split("-");
   var patientName = patientDetails[0];
   var birthDate = '';
@@ -110,16 +109,52 @@ exports.generateThumbnail = functions.storage.object().onFinalize(async (object)
     birthDate = patient.substring(patientName.length+1);
   }
 
+  var subfolder = '';
+  for (let index = 2; index < res.length-1; index++) {
+    const element = res[index];
+    if(index == 2){
+      subfolder = element;
+    } else {
+      subfolder = "/" + element;
+    }
+  }
 
-  await admin.firestore().collection("images").add(
-    {
-      path: fileUrl, 
-      thumbnail: thumbFileUrl,
-      patientDetails: patient,
-      patientName: patientName.trim(),
-      birthDate: birthDate.trim(),
-      originalFileName: originalFileName,
-      procedure: procedure
-    });
-  return console.log('Thumbnail URLs saved to database.');
+  var originalFileName = res[res.length-1];
+
+  admin.firestore().collection("images").doc(patientName + " - " + birthDate).collection("images").doc(procedure+"-"+originalFileName).create({
+    path: fileUrl, 
+    thumbnail: thumbFileUrl,
+    originalFileName: originalFileName,
+    subfolder: subfolder,
+    procedure: procedure
+  });
+
+
+  let time = new Date();
+  var procedures= [];
+  procedures.push(procedure);
+
+    var appointment = {
+      id: patientName + " - " + birthDate,
+      key: patient,
+      name: patientName,
+      birthdate: birthDate,
+      procedures: procedures,
+      procedureStartDateTime: time,
+      procedureEndDateTime: time,
+      diagnostic: "Adaugat automat",
+      notes: "Adaugat automat",
+      hasPictures: true
+    };
+
+  var appRef = admin.firestore().collection("appointments").doc(appointment.id );
+    appRef.set(appointment, {merge: true}).
+      then(
+        res => resolve(res),
+        err => reject(err))
+      .catch((err) => {
+          console.log("Error updating info about an appointment :" + value.id + " with message " + err);
+      });
+
+    return console.log('Processed URL for ' + filePath);
 });

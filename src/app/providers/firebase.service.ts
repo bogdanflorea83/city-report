@@ -127,9 +127,15 @@ export class FirebaseService {
             let data = doc.data();
             let appoinment: Appointment = new Appointment();
             appoinment = _.merge({}, appoinment, data);
-            appoinment.birthdate = data.birthdate.toDate();
-            appoinment.procedureStartDateTime = data.procedureStartDateTime.toDate();
-            appoinment.procedureEndDateTime = data.procedureEndDateTime.toDate();
+            if(data.birthdate){
+              appoinment.birthdate = data.birthdate.toDate();
+            }
+            if(data.procedureStartDateTime){
+              appoinment.procedureStartDateTime = data.procedureStartDateTime.toDate();
+            }
+            if(data.procedureEndDateTime){
+              appoinment.procedureEndDateTime = data.procedureEndDateTime.toDate();
+            }
 
             let dateKey = this.formatDate(appoinment.procedureStartDateTime);
             if(!appointmentsMap.has(dateKey)){
@@ -310,6 +316,9 @@ export class FirebaseService {
   }
 
   formatDate(date: Date) {
+    if(!date){
+      return '';
+    }
     var month = '' + (date.getMonth() + 1),
       day = '' + date.getDate(),
       year = date.getFullYear();
