@@ -19,6 +19,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AutoCompleteModule } from 'ionic4-auto-complete';
 import { ImageModalPageModule } from './pages/image-modal/image-modal.module';
 
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { File } from '@ionic-native/file/ngx';
+
 @NgModule({
   imports: [
     AutoCompleteModule,
@@ -38,7 +41,7 @@ import { ImageModalPageModule } from './pages/image-modal/image-modal.module';
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar],
+  providers: [InAppBrowser, SplashScreen, StatusBar, File, EmailComposer],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

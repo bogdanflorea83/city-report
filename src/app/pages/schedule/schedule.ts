@@ -6,6 +6,10 @@ import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
 import { Appointment } from '../../patient.model';
+import { ExcelServiceService } from '../../providers/excel-service.service';
+
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { File } from '@ionic-native/file/ngx';
 
 @Component({
   selector: 'page-schedule',
@@ -38,7 +42,10 @@ export class SchedulePage implements OnInit {
     public routerOutlet: IonRouterOutlet,
     public toastCtrl: ToastController,
     public user: UserData,
-    public config: Config
+    public config: Config,
+    public excelService: ExcelServiceService,
+    private emailComposer: EmailComposer,
+    private file: File
   ) {
     this.startDate = this.formatDate(new Date());
     this.endDate = this.formatDate(this.addDays(new Date(), 28));
@@ -242,4 +249,104 @@ export class SchedulePage implements OnInit {
 
     return data.procedureStartDateTime.getDay();
   }
+
+  exportXlsx() {
+    this.prepareDataForXlsx().then((rows) => {
+
+      //let fs = this.file.externalDataDirectory;
+
+      let fs = this.file.tempDirectory;//this.file.cacheDirectory;
+
+
+      this.excelService.createXSLX(rows).then((x) => {
+      console.log('Excel blob: ', x);
+  
+      let time = new Date();
+      let title = "Agenda Doctor Mazilu ";
+      if(this.startDate == this.endDate){
+        title += this.startDate;
+      }else{
+        title += this.startDate + "->" + this.endDate;
+      }
+
+      let fileName = title + ".xlsx";
+
+      this.file.writeFile(fs, fileName, x, { replace: true }).then(f => {
+        console.log('Returned from writing file: ', f);
+  
+        let fp = fs + fileName;
+  
+        let email = {
+          to: "bogdan.florea@tss-yonder.com",
+          attachments: [fp],
+          subject: title,
+          body: '<h1>Buna ziua, acesta este programul meu pentru perioada ' + this.startDate + "->" + this.endDate+'</h1>',
+          isHtml: true
+        };
+        this.emailComposer.open(email)
+  
+          .then(() => {  })
+          .catch(() => {
+  
+            // const toast = await this.toastCtrl.create({
+            //   message: 'Could not open email composer',
+            //   duration: 3000
+            // });
+            // await toast.present();
+
+  
+          });
+  
+  
+      }).catch(err => {
+        console.log('Error when writing file: ', err);
+      });
+  
+  
+    });
+  });
+
+    
+  }
+
+  prepareDataForXlsx(){
+    //arrays => [[‘Head1’,‘Head2’,‘Head3’],[‘val1’,‘val2’,‘val3’]]
+    return new Promise<any>((resolve, reject) => {
+      let result = [];
+      let columnNames = ["NUME SI PRENUME","TELEFON","ZIUA OP","ORA OP","NOTITE","DIAGNOSTIC BLOC OPERATOR", "COD PROCEDURA CONSILIERE"];
+      this.groups.forEach((group) => {
+        if(!group.hide){
+          group.sessions.forEach((session: Appointment) => {
+            if(!session.hide){
+              let itemValue = [];
+            itemValue.push(session.name);
+            itemValue.push(session.phone);
+            itemValue.push(session.procedureStartDateTime);
+            itemValue.push(session.procedureStartDateTime);
+            itemValue.push(session.notes);
+            itemValue.push(session.diagnostic);
+            let procedure = '';
+            if(session.procedures != null){
+              session.procedures.forEach((procedureName: string) => {
+                procedure = procedure + procedureName + "/";
+              });
+            }
+            itemValue.push(procedure);
+    
+            //let itemResult = [];
+            //itemResult.push(columnNames);
+            //itemResult.push(itemValue);
+            //result.push(itemResult);
+            result.push(columnNames);
+            result.push(itemValue);
+
+            }
+            
+          });
+        }
+      });
+      resolve(result);
+    });
+  }
+    
 }

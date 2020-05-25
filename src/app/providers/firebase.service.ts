@@ -205,11 +205,13 @@ export class FirebaseService {
     // if any of the sessions tracks are not in the
     // exclude tracks then this session passes the track test
     let matchesTracks = false;
-    session.procedures.forEach((procedureName: string) => {
-      if (excludeTracks.indexOf(procedureName) === -1) {
-        matchesTracks = true;
-      }
-    });
+    if(session.procedures != null){
+      session.procedures.forEach((procedureName: string) => {
+        if (excludeTracks.indexOf(procedureName) === -1) {
+          matchesTracks = true;
+        }
+      });
+    }
 
     // all tests must be true if it should not be hidden
     session.hide = !(matchesQueryText && matchesTracks);

@@ -39,6 +39,13 @@
     dayNames="Duminica, Luni, Marti, Miercuri, Joi, Vineri, Sambata"
     monthShortNames="ian, feb, mar, apr, mai, iun, iul, aug, sep, oct, noi, dec"
     monthNames="Ianuarie, Februarie, Martie, Aprilie, Mai, Iunie, Iulie, August, Septembrie, Octombrie, Noiembrie, Decembrie"></ion-datetime>
+  
+    <ion-buttons slot="end">
+      <ion-button (click)="exportXlsx()">
+        <ion-icon slot="icon-only" name="mail-outline"></ion-icon>
+      </ion-button>
+    
+    </ion-buttons>
   </ion-item>
   <ion-list #scheduleList [hidden]="shownSessions == 0">
     <ion-item-group *ngFor="let group of groups" [hidden]="group.hide==true">
