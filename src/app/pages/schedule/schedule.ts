@@ -250,6 +250,45 @@ export class SchedulePage implements OnInit {
     return data.procedureStartDateTime.getDay();
   }
 
+  exportHtml() {
+    this.prepareHtmlTable().then((htmlBody) => {
+
+      let time = new Date();
+      let title = "Agenda Doctor Mazilu ";
+      if(this.startDate == this.endDate){
+        title += this.startDate;
+      }else{
+        title += this.startDate + "->" + this.endDate;
+      }
+
+      let email = {
+        to: "bogdan.florea@tss-yonder.com",
+        //attachments: [fp],
+        subject: title,
+        //body: '<h1>Buna ziua, acesta este programul meu pentru perioada ' + this.startDate + "->" + this.endDate+'</h1>',
+        body: htmlBody,
+        isHtml: true
+      };
+      this.emailComposer.open(email)
+
+        .then(() => {  })
+        .catch(() => {
+
+          // const toast = await this.toastCtrl.create({
+          //   message: 'Could not open email composer',
+          //   duration: 3000
+          // });
+          // await toast.present();
+
+
+        });
+
+
+    }).catch(err => {
+      console.log('Error when writing file: ', err);
+    });
+}
+
   exportXlsx() {
     this.prepareDataForXlsx().then((rows) => {
 
@@ -346,6 +385,53 @@ export class SchedulePage implements OnInit {
         }
       });
       resolve(result);
+    });
+  }
+
+  prepareHtmlTable(){
+    return new Promise<any>((resolve, reject) => {
+      let result = [];
+      let columnNames = ["NUME SI PRENUME","TELEFON","ZIUA OP","ORA OP","NOTITE","DIAGNOSTIC BLOC OPERATOR", "COD PROCEDURA CONSILIERE"];
+      let html = '<html>'; 
+      html += '<h1>Buna ziua, acesta este programul meu pentru perioada ' + this.startDate + "->" + this.endDate+'</h1>';
+
+      html += '<body><table border = "1" cellpadding = "5" cellspacing = "5">';
+      html += '<tr style="color: red;">';
+
+      columnNames.forEach((column) => {
+        html += "<th>"+column+"</th>";
+      });
+      html += "</tr>";
+      this.groups.forEach((group) => {
+        if(!group.hide){
+          group.sessions.forEach((session: Appointment) => {
+            if(!session.hide){
+              html += "<tr>"
+            html += "<td>"+session.name+"</td>";
+            html += "<td>"+session.phone+"</td>";
+            html += "<td>"+this.formatDate(session.procedureStartDateTime)+"</td>";
+            html += "<td>"+this.formatTime(session.procedureStartDateTime)+"</td>";
+            html += "<td>"+session.notes+"</td>";
+            html += "<td>"+session.diagnostic+"</td>";
+
+            let procedure = '';
+            if(session.procedures != null){
+              session.procedures.forEach((procedureName: string) => {
+                procedure = procedure + procedureName + "/";
+              });
+            }
+            html += "<td>"+procedure+"</td>";
+            html += "</tr>";
+            }
+            
+          });
+        }
+      });
+      html += "</table>";
+      html += "</body>";
+      html += "</html>";
+      
+      resolve(html);
     });
   }
     
