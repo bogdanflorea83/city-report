@@ -13,6 +13,8 @@ import { UserData } from './providers/user-data';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AssetsService } from './providers/assets.service';
 
+import { FCM } from '@ionic-native/fcm/ngx';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -56,6 +58,7 @@ export class AppComponent implements OnInit {
     private swUpdate: SwUpdate,
     private toastCtrl: ToastController,
     public afAuth: AngularFireAuth,
+    private fcm: FCM,
   ) {
     this.initializeApp();
   }
@@ -87,6 +90,26 @@ export class AppComponent implements OnInit {
 
   initializeApp() {
     this.platform.ready().then(() => {
+      this.fcm.getToken().then(token => {
+        console.log("Token: "+token);
+      });
+      this.fcm.onTokenRefresh().subscribe(token => {
+        console.log("Refresh Token: "+token);
+      });
+      this.fcm.onNotification().subscribe(data => {
+        console.log("Notification:" +data);
+        let landingPage = "/app/tabs/about";
+        if(data.landing_page){
+          landingPage = data.landing_page;
+        }
+        if (data.wasTapped) {
+          console.log('Received in background');
+          this.router.navigate([landingPage, data.price]);
+        } else {
+          console.log('Received in foreground');
+          this.router.navigate([landingPage, data.price]);
+        }
+      });
       this.afAuth.user.subscribe(user => {
         if(user){
           this.router.navigate(["/tutorial"]);

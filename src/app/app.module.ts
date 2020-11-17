@@ -22,6 +22,8 @@ import { ImageModalPageModule } from './pages/image-modal/image-modal.module';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import { File } from '@ionic-native/file/ngx';
 
+import { FCM } from '@ionic-native/fcm/ngx';
+
 @NgModule({
   imports: [
     AutoCompleteModule,
@@ -41,7 +43,7 @@ import { File } from '@ionic-native/file/ngx';
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar, File, EmailComposer],
+  providers: [InAppBrowser, SplashScreen, StatusBar, File, EmailComposer, FCM],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
