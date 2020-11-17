@@ -22,22 +22,22 @@ import { AssetsService } from './providers/assets.service';
 export class AppComponent implements OnInit {
   appPages = [
     {
-      title: 'Agenda',
+      title: 'Probleme',
       url: '/app/tabs/schedule',
-      icon: 'calendar'
+      icon: 'alert'
     },
     {
-      title: 'Pacienti',
-      url: '/app/tabs/speakers',
-      icon: 'people'
-    },
-    {
-      title: 'Map',
+      title: 'Harta',
       url: '/app/tabs/map',
       icon: 'map'
     },
     {
-      title: 'About',
+      title: 'Noutati',
+      url: '/app/tabs/speakers',
+      icon: 'newspaper'
+    },
+    {
+      title: 'Despre',
       url: '/app/tabs/about',
       icon: 'information-circle'
     }
