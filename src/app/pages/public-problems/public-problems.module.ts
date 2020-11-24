@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
-import { PatientListPage } from './patient-list';
-import { PatientListPageRoutingModule } from './patient-list-routing.module';
+import { PublicProblemsPage } from './public-problems';
+import { PublicProblemsPageRoutingModule } from './public-problems-routing.module';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -11,8 +11,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     IonicModule,
     FormsModule,
-    PatientListPageRoutingModule
+    PublicProblemsPageRoutingModule
   ],
-  declarations: [PatientListPage],
+  declarations: [PublicProblemsPage],
 })
-export class PatientListModule {}
+export class PublicProblemsModule {}

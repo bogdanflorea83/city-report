@@ -12,11 +12,11 @@ import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import { File } from '@ionic-native/file/ngx';
 
 @Component({
-  selector: 'page-schedule',
-  templateUrl: 'schedule.html',
-  styleUrls: ['./schedule.scss'],
+  selector: 'page-problems',
+  templateUrl: 'problems.html',
+  styleUrls: ['./problems.scss'],
 })
-export class SchedulePage implements OnInit {
+export class ProblemsPage implements OnInit {
   // Gets a reference to the list element
   @ViewChild('scheduleList', { static: true }) scheduleList: IonList;
 

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
-import { SchedulePage } from '../schedule/schedule';
+import { ProblemsPage } from '../problems/problems';
 
 
 const routes: Routes = [
@@ -10,11 +10,11 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'schedule',
+        path: 'problems',
         children: [
           {
             path: '',
-            component: SchedulePage,
+            component: ProblemsPage,
           },
           {
             path: 'session/:sessionId',
@@ -27,11 +27,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'speakers',
+        path: 'public-problems',
         children: [
           {
             path: '',
-            loadChildren: () => import('../patient-list/patient-list.module').then(m => m.PatientListModule)
+            loadChildren: () => import('../public-problems/public-problems.module').then(m => m.PublicProblemsModule)
           },
           {
             path: 'session/:sessionId',
@@ -67,7 +67,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/app/tabs/schedule',
+        redirectTo: '/app/tabs/problems',
         pathMatch: 'full'
       }
     ]

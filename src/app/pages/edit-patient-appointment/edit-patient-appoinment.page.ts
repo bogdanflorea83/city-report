@@ -97,7 +97,7 @@ export class EditPatientAppointmentPage implements OnInit {
 
   onSubmit(values) {
     console.log(values);
-    this.router.navigate(["/app/tabs/schedule"]);
+    this.router.navigate(["/app/tabs/problems"]);
   }
 
   save() {
@@ -110,7 +110,7 @@ export class EditPatientAppointmentPage implements OnInit {
     const toast = await this.toastCtrl.create({ message: `Pacient salvat cu success.`, duration: 2000, position: 'middle' });
     toast.present();
     this.firebaseService.createAppointment(appointment);
-    this.router.navigate(["/app/tabs/schedule"]);
+    this.router.navigate(["/app/tabs/problems"]);
   }
 
   private createFromForm(): Appointment {
@@ -140,7 +140,7 @@ export class EditPatientAppointmentPage implements OnInit {
   }
 
   cancel(){
-    this.router.navigate(["/app/tabs/schedule"]);
+    this.router.navigate(["/app/tabs/problems"]);
   }
 
 }

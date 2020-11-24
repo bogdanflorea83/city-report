@@ -39,7 +39,7 @@ export class LoginPage {
     .then(res => {
       this.userData.login(this.login.username);
       this.assetsService.init();
-      this.router.navigate(["/app/tabs/schedule"]);
+      this.router.navigate(["/app/tabs/problems"]);
     }, err => {
       console.log(err)
     })

@@ -7,12 +7,12 @@ import { TabsPageRoutingModule } from './tabs-page-routing.module';
 
 import { AboutModule } from '../about/about.module';
 import { MapModule } from '../map/map.module';
-import { ScheduleModule } from '../schedule/schedule.module';
 import { SessionDetailModule } from '../session-detail/session-detail.module';
 import { PatientDetailModule } from '../patient-detail/patient-detail.module';
-import { PatientListModule } from '../patient-list/patient-list.module';
+import { PublicProblemsModule } from '../public-problems/public-problems.module';
 import { AddPatientPageModule } from '../add-patient/add-patient.module';
 import { EditPatientAppointmentPageModule } from '../edit-patient-appointment/edit-patient-appointment.module';
+import { ProblemsModule } from '../problems/problems.module';
 
 @NgModule({
   imports: [
@@ -20,10 +20,10 @@ import { EditPatientAppointmentPageModule } from '../edit-patient-appointment/ed
     CommonModule,
     IonicModule,
     MapModule,
-    ScheduleModule,
+    ProblemsModule,
     SessionDetailModule,
     PatientDetailModule,
-    PatientListModule,
+    PublicProblemsModule,
     AddPatientPageModule,
     EditPatientAppointmentPageModule,
     TabsPageRoutingModule

@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   appPages = [
     {
       title: 'Petitiile mele',
-      url: '/app/tabs/schedule',
+      url: '/app/tabs/problems',
       icon: 'alert'
     },
     {
@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Petitii publice',
-      url: '/app/tabs/speakers',
+      url: '/app/tabs/public-problems',
       icon: 'newspaper'
     },
     {
@@ -155,7 +155,7 @@ export class AppComponent implements OnInit {
 
   logout() {
     this.userData.logout().then(() => {
-      return this.router.navigateByUrl('/app/tabs/schedule');
+      return this.router.navigateByUrl('/app/tabs/problems');
     });
   }
 

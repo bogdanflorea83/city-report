@@ -36,7 +36,7 @@ export class SignupPage {
     this.authService.doRegister(value)
      .then(res => {
       this.userData.signup(this.signup.username);
-      this.router.navigateByUrl('/app/tabs/schedule');
+      this.router.navigateByUrl('/app/tabs/problems');
        console.log(res);
      }, err => {
        console.log(err);
