@@ -19,6 +19,7 @@
               "location": "Cabinet 1",
               "tracks": ["Remodelare lob nazal"],
               "id": "1",
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "imgs": [
                 {
                   "thumbUrl": "assets/img/1.JPG",
@@ -65,6 +66,7 @@
               "timeStart": "9:00 am",
               "timeEnd": "9:15 am",
               "tracks": ["Abdominoplastie subtotala"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "2"
             },
             {
@@ -81,6 +83,7 @@
               "timeStart": "9:15 am",
               "timeEnd": "9:30 am",
               "tracks": ["Abdominoplastie subtotala"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "3"
             },
             {
@@ -97,6 +100,7 @@
               "timeStart": "9:30 am",
               "timeEnd": "9:45 am",
               "tracks": ["Abdominoplastie subtotala"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "4"
             }
           ]
@@ -118,6 +122,7 @@
               "timeStart": "10:00 am",
               "timeEnd": "10:15 am",
               "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "5"
             },
             {
@@ -134,6 +139,7 @@
               "timeStart": "10:15 am",
               "timeEnd": "10:30 am",
               "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "6"
             },
             {
@@ -150,6 +156,7 @@
               "timeStart": "10:15 am",
               "timeEnd": "10:30 am",
               "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "7"
             },
             {
@@ -166,6 +173,7 @@
               "timeStart": "10:45 am",
               "timeEnd": "11:00 am",
               "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "8"
             }
           ]
@@ -187,6 +195,7 @@
               "timeStart": "11:00 am",
               "timeEnd": "11:45 am",
               "tracks": ["Labioplastia"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "9"
             },
             {
@@ -203,6 +212,7 @@
               "timeStart": "11:30 am",
               "timeEnd": "11:50 am",
               "tracks": ["Labioplastia"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "10"
             },
             {
@@ -219,6 +229,7 @@
               "timeStart": "11:30 am",
               "timeEnd": "12:00 pm",
               "tracks": ["Labioplastia"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "11"
             }
           ]
@@ -239,6 +250,7 @@
               "timeStart": "12:00 pm",
               "timeEnd": "1:00 pm",
               "tracks": ["Blefaroplastie superioară bilaterală + Abdominoplastie radicală"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "12"
             }
           ]
@@ -260,6 +272,7 @@
               "timeStart": "1:00 pm",
               "timeEnd": "1:15 pm",
               "tracks": ["Remodelare lob nazal"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "13"
             },
             {
@@ -276,6 +289,7 @@
               "timeStart": "1:15 pm",
               "timeEnd": "1:30 pm",
               "tracks": ["Remodelare lob nazal"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "14"
             },
             {
@@ -292,6 +306,7 @@
               "timeStart": "1:30 pm",
               "timeEnd": "2:00 pm",
               "tracks": ["Remodelare lob nazal"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "15"
             }
           ]
@@ -313,6 +328,7 @@
               "timeStart": "2:00 pm",
               "timeEnd": "2:30 pm",
               "tracks": ["Abdominoplastie subtotala"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "16"
             },
             {
@@ -329,6 +345,7 @@
               "timeStart": "2:30 pm",
               "timeEnd": "2:45 pm",
               "tracks": ["Abdominoplastie subtotala"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "17"
             },
             {
@@ -345,6 +362,7 @@
               "timeStart": "2:45 pm",
               "timeEnd": "3:00 pm",
               "tracks": ["Abdominoplastie subtotala"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "18"
             }
           ]
@@ -366,6 +384,7 @@
               "timeStart": "3:00 pm",
               "timeEnd": "3:30 pm",
               "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "19"
             },
             {
@@ -381,6 +400,7 @@
               "timeStart": "3:30 pm",
               "timeEnd": "3:45 pm",
               "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
+              "profilePic": "/assets/img/speakers/bear.jpg",
               "id": "20"
             }
           ]
