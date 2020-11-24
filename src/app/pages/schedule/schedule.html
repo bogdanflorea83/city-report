@@ -54,18 +54,18 @@
           {{group.time}}
         </ion-label>
       </ion-item-divider>
-      <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="getDayOfWeek(session)"
+      <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="getCategoryType(group)"
         [hidden]="session.hide">
         <ion-item routerLink="/app/tabs/schedule/session/{{session.id}}">
           <ion-label>
             <h3>
               <ion-icon name="attach-outline" *ngIf="session.imgs != null && session.imgs.length>0" slot="start"></ion-icon>
-              {{session.name}} - {{formatDate(session.birthdate)}} 
+              {{session.name}} - {{session.date}} 
             </h3>
             <p>
               {{formatTime(session.procedureStartDateTime)}} &mdash; {{formatTime(session.procedureEndDateTime)}} Tel: {{session.phone}}
             </p>
-            <p>{{session.procedures}}</p>
+            <p>{{session.description}}</p>
           </ion-label>
         </ion-item>
       </ion-item-sliding>

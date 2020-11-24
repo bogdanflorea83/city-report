@@ -24,7 +24,7 @@ import { FCM } from '@ionic-native/fcm/ngx';
 export class AppComponent implements OnInit {
   appPages = [
     {
-      title: 'Probleme',
+      title: 'Petitiile mele',
       url: '/app/tabs/schedule',
       icon: 'alert'
     },
@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
       icon: 'map'
     },
     {
-      title: 'Noutati',
+      title: 'Petitii publice',
       url: '/app/tabs/speakers',
       icon: 'newspaper'
     },

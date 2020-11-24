@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1005663303683-9eemkoeb98f20nl82d8vd7rinh8n8o54.apps.googleusercontent.com</string>
+	<string>796204012744-uhtkkhtvm0ngifplt9ofq1up9eq3i8de.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1005663303683-9eemkoeb98f20nl82d8vd7rinh8n8o54</string>
+	<string>com.googleusercontent.apps.796204012744-uhtkkhtvm0ngifplt9ofq1up9eq3i8de</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDhK2qHIzUlOG5vENNDrAAOSRq9yUMQdBA</string>
+	<string>AIzaSyDpimPiqbuVPJmbL71J4TG0JIrE4ztsTxs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1005663303683</string>
+	<string>796204012744</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>ro.bof.doctor</string>
+	<string>com.hereitis.cityReport</string>
 	<key>PROJECT_ID</key>
-	<string>doctor-b3f86</string>
+	<string>city-report-bf2f5</string>
 	<key>STORAGE_BUCKET</key>
-	<string>doctor-b3f86.appspot.com</string>
+	<string>city-report-bf2f5.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1005663303683:ios:6273d511f5dd3e24c33636</string>
+	<string>1:796204012744:ios:4085159c7d1d0d4b6b01fd</string>
 	<key>DATABASE_URL</key>
-	<string>https://doctor-b3f86.firebaseio.com</string>
+	<string>https://city-report-bf2f5.firebaseio.com</string>
 </dict>
 </plist>

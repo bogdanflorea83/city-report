@@ -1,0 +1,48 @@
+{
+    "project_info": {
+      "project_number": "796204012744",
+      "firebase_url": "https://city-report-bf2f5.firebaseio.com",
+      "project_id": "city-report-bf2f5",
+      "storage_bucket": "city-report-bf2f5.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:796204012744:android:42e5f28e76f1f2e96b01fd",
+          "android_client_info": {
+            "package_name": "com.hereitis.cityReport"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "796204012744-jvh6crg9e515lvjuanmufrmkn4k8e9a5.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyBz8WkItnDLVTctB8r_D2Y-M78-8WAGDdg"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "796204012744-jvh6crg9e515lvjuanmufrmkn4k8e9a5.apps.googleusercontent.com",
+                "client_type": 3
+              },
+              {
+                "client_id": "796204012744-uhtkkhtvm0ngifplt9ofq1up9eq3i8de.apps.googleusercontent.com",
+                "client_type": 2,
+                "ios_info": {
+                  "bundle_id": "com.hereitis.cityReport"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }
+  

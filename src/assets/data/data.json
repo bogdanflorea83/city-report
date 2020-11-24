@@ -4,10 +4,10 @@
       "date": "2020-05-11",
       "groups": [
         {
-          "time": "Luni",
+          "time": "Gunoi",
           "sessions": [
             {
-              "name": "Florea Bogdan",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-11", 
@@ -49,10 +49,10 @@
           ]
         },
         {
-          "time": "Marti",
+          "time": "Gropi",
           "sessions": [
             {
-              "name": "Popescu Ioana ",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-12", 
@@ -68,7 +68,7 @@
               "id": "2"
             },
             {
-              "name": "Mazilu M ",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-12", 
@@ -84,7 +84,7 @@
               "id": "3"
             },
             {
-              "name": "Ionescu A ",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-12", 
@@ -102,10 +102,10 @@
           ]
         },
         {
-          "time": "Miercuri",
+          "time": "Poluare",
           "sessions": [
             {
-              "name": "Gabriela C ",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-13", 
@@ -121,7 +121,7 @@
               "id": "5"
             },
             {
-              "name": "Andreea i - silicoane",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-13", 
@@ -137,7 +137,7 @@
               "id": "6"
             },
             {
-              "name": "Mihaela I - buze",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-13", 
@@ -153,7 +153,7 @@
               "id": "7"
             },
             {
-              "name": "Dorel C - alt",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-13", 
@@ -171,10 +171,10 @@
           ]
         },
         {
-          "time": "Joi",
+          "time": "Transport în comun",
           "sessions": [
             {
-              "name": "Pacienta",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-14", 
@@ -190,7 +190,7 @@
               "id": "9"
             },
             {
-              "name": "Pacienta",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-14", 
@@ -206,7 +206,7 @@
               "id": "10"
             },
             {
-              "name": "Pacienta",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-14", 
@@ -224,10 +224,10 @@
           ]
         },
         {
-          "time": "Vineri",
+          "time": "Trafic",
           "sessions": [
             {
-              "name": "Pacienta",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-18", 
               "date": "2020-05-15", 
@@ -244,10 +244,10 @@
           ]
         },
         {
-          "time": "Luni",
+          "time": "Urbanism",
           "sessions": [
             {
-              "name": "Pacienta",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-18", 
@@ -263,7 +263,7 @@
               "id": "13"
             },
             {
-              "name": "Pacienta",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-18", 
@@ -279,7 +279,7 @@
               "id": "14"
             },
             {
-              "name": "Pacienta",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-18", 
@@ -297,10 +297,10 @@
           ]
         },
         {
-          "time": "Marti",
+          "time": "Birocratie",
           "sessions": [
             {
-              "name": "Pacienta",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-19", 
               "date": "2020-05-19", 
@@ -316,7 +316,7 @@
               "id": "16"
             },
             {
-              "name": "Pacienta",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-19", 
               "date": "2020-05-19", 
@@ -332,7 +332,7 @@
               "id": "17"
             },
             {
-              "name": "Pacienta",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-19", 
@@ -350,10 +350,10 @@
           ]
         },
         {
-          "time": "Miercuri",
+          "time": "Siguranța cetățenilor",
           "sessions": [
             {
-              "name": "Pacienta",
+              "name": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
               "date": "2020-05-20", 
@@ -369,7 +369,7 @@
               "id": "19"
             },
             {
-              "name": "Pacienta",
+              "name": "Problema majora",
               "birthDate": "1980-05-17", 
               "date": "2020-05-20", 
               "notes": "",
@@ -391,156 +391,156 @@
 
   "speakers": [
     {
-      "name": "Burt Bear",
+      "name": "Gropi subject 1",
       "profilePic": "/assets/img/speakers/bear.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Burt is a Bear. Burt's interests include poetry, dashing space heroes, and lions.",
-      "title": "Software Engineer",
+      "title": "Gropi",
       "location": "Everywhere",
       "email": "burt@example.com",
       "phone": "+1-541-754-3010",
       "id": "1"
     },
     {
-      "name": "Charlie Cheetah",
+      "name": "Gropi subject 2",
       "profilePic": "/assets/img/speakers/cheetah.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Charlie is a Cheetah. Charlie's interests include country music, plush animals, pyrotechnics, and skeletons.",
-      "title": "Software Engineer",
+      "title": "Gropi",
       "location": "Everywhere",
       "email": "charlie@example.com",
       "phone": "+1-541-754-3010",
       "id": "2"
     },
     {
-      "name": "Donald Duck",
+      "name": "Gropi subject 3",
       "profilePic": "/assets/img/speakers/duck.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Donald is a Duck. Donald's interests include carpentry, superheroes, merpeople, and glam rock.",
-      "title": "Software Engineer",
+      "title": "Gropi",
       "location": "Everywhere",
       "email": "donald@example.com",
       "phone": "+1-541-754-3010",
       "id": "3"
     },
     {
-      "name": "Eva Eagle",
+      "name": "Gunoi subject 1",
       "profilePic": "/assets/img/speakers/eagle.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Eva is an Eagle. Eva's interests include ants, seashells, and cupcakes.",
-      "title": "Developer Advocate",
+      "title": "Gunoi",
       "location": "Everywhere",
       "email": "eva@example.com",
       "phone": "+1-541-754-3010",
       "id": "4"
     },
     {
-      "name": "Ellie Elephant",
+      "name": "Gropi subject 5",
       "profilePic": "/assets/img/speakers/elephant.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Ellie is an Elephant. Ellie's interests include pocket watches, pool, hand fans, and ninjas.",
-      "title": "Software Engineer",
+      "title": "Gropi",
       "location": "Everywhere",
       "email": "ellie@example.com",
       "phone": "+1-541-754-3010",
       "id": "5"
     },
     {
-      "name": "Gino Giraffe",
+      "name": "Gropi subject",
       "profilePic": "/assets/img/speakers/giraffe.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Gino is a Giraffe. Gino's interests include candy-making, unicorns, and birdhouses.",
-      "title": "Software Engineer",
+      "title": "Gropi",
       "location": "Everywhere",
       "email": "gino@example.com",
       "phone": "+1-541-754-3010",
       "id": "6"
     },
     {
-      "name": "Isabella Iguana",
+      "name": "Gropi special",
       "profilePic": "/assets/img/speakers/iguana.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Isabella is an Iguana. Isabella's interests include crystals, architecture, and candle-making.",
-      "title": "Software Engineer",
+      "title": "Gropi",
       "location": "Everywhere",
       "email": "isabella@example.com",
       "phone": "+1-541-754-3010",
       "id": "7"
     },
     {
-      "name": "Karl Kitten",
+      "name": "Gropi acasa",
       "profilePic": "/assets/img/speakers/kitten.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Karl is a Kitten. Karl's interests include skiing, jewelry, and needlepoint.",
-      "title": "Developer Advocate",
+      "title": "Gunoi",
       "location": "Everywhere",
       "email": "karl@example.com",
       "phone": "+1-541-754-3010",
       "id": "8"
     },
     {
-      "name": "Lionel Lion",
+      "name": "Gropi centru",
       "profilePic": "/assets/img/speakers/lion.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Lionel is a Lion. Lionel's interests include lizards and mathematics.",
-      "title": "Developer Advocate",
+      "title": "Gunoi",
       "location": "Everywhere",
       "email": "lionel@example.com",
       "phone": "+1-541-754-3010",
       "id": "9"
     },
     {
-      "name": "Molly Mouse",
+      "name": "Gropi dric",
       "profilePic": "/assets/img/speakers/mouse.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Molly is a Mouse. Molly's interests include werewolves and magic.",
-      "title": "Software Engineer",
+      "title": "Gropi",
       "location": "Everywhere",
       "email": "molly@example.com",
       "phone": "+1-541-754-3010",
       "id": "10"
     },
     {
-      "name": "Paul Puppy",
+      "name": "Gropi copou",
       "profilePic": "/assets/img/speakers/puppy.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Paul is a Puppy. Paul's interests include maps, whales, and dragons.",
-      "title": "Software Engineer",
+      "title": "Gropi",
       "location": "Everywhere",
       "email": "paul@example.com",
       "phone": "+1-541-754-3010",
       "id": "11"
     },
     {
-      "name": "Rachel Rabbit",
+      "name": "Gropi ceva",
       "profilePic": "/assets/img/speakers/rabbit.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Rachel is a Rabbit. Rachel's interests include clowns, skeletons, and yo-yos.",
-      "title": "Senior Software Engineer",
+      "title": "Senior Gropi",
       "location": "Everywhere",
       "email": "rachel@example.com",
       "phone": "+1-541-754-3010",
       "id": "12"
     },
     {
-      "name": "Ted Turtle",
+      "name": "Gropi mari",
       "profilePic": "/assets/img/speakers/turtle.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Ted is a Turtle. Ted's interests include butterflies, skiing, and cupcakes.",
-      "title": "Software Engineer",
+      "title": "Gropi",
       "location": "Everywhere",
       "email": "ted@example.com",
       "id": "13"

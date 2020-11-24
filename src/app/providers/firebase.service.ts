@@ -23,9 +23,9 @@ export class FirebaseService {
 
   getTracks() {
     return new Promise<any>((resolve, reject) => {
-      this.afs.collection('procedures').doc("procedure").ref.get().then((querySnapshot: DocumentSnapshot<any>) => {
+      this.afs.collection('categories').doc("category").ref.get().then((querySnapshot: DocumentSnapshot<any>) => {
         let docA: DocumentData = querySnapshot.data();
-        let procedures = docA["procedures"];
+        let procedures = docA["categories"];
         resolve(procedures);
       })
     })

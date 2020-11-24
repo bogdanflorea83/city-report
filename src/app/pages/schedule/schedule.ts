@@ -69,35 +69,35 @@ export class SchedulePage implements OnInit {
       this.scheduleList.closeSlidingItems();
     }
 
-    // this.confData.getTimeline(this.dayIndex, this.queryText, this.excludeTracks, this.segment).subscribe((data: any) => {
-    //   this.shownSessions = data.shownSessions;
-    //   this.groups = data.groups;
-    // });
-    let startDate = new Date(this.startDate);
-    startDate.setHours(0, 1, 1);
-    let endDate = new Date(this.endDate);
-    endDate.setHours(23, 59, 59);
-    this.confData.getTimelineFromFirebase(startDate, endDate, 
-      this.queryText, this.excludeTracks).then((data: Map<String, Appointment[]>) => {
-        let newShownSessions = 0;
-        let newGroups: any[] = [];
-      data.forEach((value: Appointment[], key: string) => {
-        let groupHide = true;
-        value.forEach((app: Appointment) => {
-          if(!app.hide){
-            newShownSessions = newShownSessions+1;
-            groupHide = false;
-          }
-        });
-        newGroups.push({
-          hide: groupHide,
-          sessions: value,
-          time: this.getDayLabel(key)
-        });
-      });
-      this.shownSessions = newShownSessions;
-      this.groups = newGroups;
+    this.confData.getTimeline(this.dayIndex, this.queryText, this.excludeTracks, this.segment).subscribe((data: any) => {
+      this.shownSessions = data.shownSessions;
+      this.groups = data.groups;
     });
+    // let startDate = new Date(this.startDate);
+    // startDate.setHours(0, 1, 1);
+    // let endDate = new Date(this.endDate);
+    // endDate.setHours(23, 59, 59);
+    // this.confData.getTimelineFromFirebase(startDate, endDate, 
+    //   this.queryText, this.excludeTracks).then((data: Map<String, Appointment[]>) => {
+    //     let newShownSessions = 0;
+    //     let newGroups: any[] = [];
+    //   data.forEach((value: Appointment[], key: string) => {
+    //     let groupHide = true;
+    //     value.forEach((app: Appointment) => {
+    //       if(!app.hide){
+    //         newShownSessions = newShownSessions+1;
+    //         groupHide = false;
+    //       }
+    //     });
+    //     newGroups.push({
+    //       hide: groupHide,
+    //       sessions: value,
+    //       time: this.getDayLabel(key)
+    //     });
+    //   });
+    //   this.shownSessions = newShownSessions;
+    //   this.groups = newGroups;
+    // });
   }
 
   getDayLabel(groupDate: string): String {
@@ -248,6 +248,16 @@ export class SchedulePage implements OnInit {
     
 
     return data.procedureStartDateTime.getDay();
+  }
+
+  getCategoryType(group){
+    // if(!group.time){
+    //   return 0;
+    // }
+    
+    // //return data.group[0];
+
+    return Math.floor( Math.random() * 6 );
   }
 
   exportHtml() {
