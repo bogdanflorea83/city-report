@@ -5,7 +5,7 @@ import { AlertController, IonList, IonRouterOutlet, LoadingController, ModalCont
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
-import { Appointment } from '../../patient.model';
+import { Appointment, Status } from '../../patient.model';
 import { ExcelServiceService } from '../../providers/excel-service.service';
 
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
@@ -250,14 +250,25 @@ export class ProblemsPage implements OnInit {
     return data.procedureStartDateTime.getDay();
   }
 
-  getCategoryType(group){
-    // if(!group.time){
-    //   return 0;
-    // }
-    
-    // //return data.group[0];
+  getCategoryType(status: Status){
+    // NEW, 'REGISTERED', 'IN_PROGRESS','COMPLETE','CANCELED'
+    if(Status.NEW == status){
+      return 0;
+    }
+    if(Status.REGISTERED == status){
+      return 1;
+    }
+    if(Status.IN_PROGRESS == status){
+      return 2;
+    }
+    if(Status.COMPLETE == status){
+      return 3;
+    }
+    if(Status.CANCELED == status){
+      return 4;
+    }
 
-    return Math.floor( Math.random() * 6 );
+    return 5;
   }
 
   exportHtml() {

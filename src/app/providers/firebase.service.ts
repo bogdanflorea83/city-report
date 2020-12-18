@@ -4,7 +4,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as _ from 'lodash';
-import { Appointment, Patient } from '../patient.model';
+import { Appointment, Patient, Problem } from '../patient.model';
 import { UserData } from './user-data';
 
 const setOptions : SetOptions = {merge: true};
@@ -332,4 +332,101 @@ export class FirebaseService {
 
     return [year, month, day].join('-');
   }
+
+  createProblem(value: Problem){
+    return new Promise<any>((resolve, reject) => {
+      const reportedProblemDocRef: DocumentReference = firebase.firestore().doc(value.city+"/" + value.category);
+      let data = {
+        category: value.category,
+        reportedIssues: firebase.firestore.FieldValue.arrayUnion(value)
+      }
+      reportedProblemDocRef.set(data, setOptions)
+      .catch((err) => {
+          console.log("Error updating info about a reported problem :" + value.id + " with message " + err);
+      });
+    })
+  }
+
+  getReportedProblemsFromFirebase(
+    queryText : string,
+    excludeTracks: any[],
+    startDate: Date,
+    endDate: Date,
+  ) {
+    queryText = queryText.toLowerCase().replace(/,|\.|-/g, ' ');
+    const queryWords = queryText.split(' ').filter(w => !!w.trim().length);
+    let city = "iasi";
+
+    return new Promise<any>((resolve, reject) => {
+      let problemsMap: Map<String, Problem[]> = new Map<String, Problem[]>();
+      this.afs.collection(city).get()
+      let query: Query = this.afs.collection(city).ref;
+     
+      query.get()
+        .then((querySnapshot: QuerySnapshot<any>) => {
+          querySnapshot.forEach((doc) => {
+            console.log(doc.id, " => ", doc.data());
+            let data = doc.data();
+            let reportedProblems: [] = data.problems;
+            if(reportedProblems && reportedProblems.length > 0){
+              reportedProblems.forEach((item) => {
+                let problem: Problem = new Problem();
+                problem = _.merge({}, problem, item);
+                this.filterProblems(problem, queryWords, excludeTracks, startDate, endDate);
+                // todo set hide here
+                if(problem.hide == true){
+                  return;
+                }
+                if(!problemsMap.has(problem.category)){
+                  problemsMap.set(problem.category, []);
+                }
+                let problemsPerCategory : Problem[] = problemsMap.get(problem.category);
+                problemsPerCategory.push(problem);
+              });
+            }
+          });
+        });
+      resolve(problemsMap);
+    });
+  }
+
+  filterProblems(
+    session: Problem,
+    queryWords: string[],
+    excludeTracks: any[],
+    startDate: Date,
+    endDate: Date,
+  ) {
+
+    if(!(session.createDate >= startDate
+      && session.createDate <= endDate)){
+        session.hide = true;
+        return;
+    }
+
+    if (excludeTracks.indexOf(session.category) > -1) {
+      session.hide = true;
+      return;
+    }
+
+    let matchesQueryText = false;
+    if (queryWords.length) {
+      // of any query word is in the session name than it passes the query test
+      queryWords.forEach((queryWord: string) => {
+        // todo maybe check after author/description
+        if (session.subject.toLowerCase().indexOf(queryWord.toLowerCase()) > -1) {
+          matchesQueryText = true;
+        }
+      });
+    } else {
+      // if there are no query words then this session passes the query test
+      matchesQueryText = true;
+    }
+
+    if(!matchesQueryText){
+      session.hide = false;
+      return;
+    }
+  }
+
 }

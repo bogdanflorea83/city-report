@@ -1,25 +1,25 @@
 {
   "schedule": [
     {
-      "date": "2020-05-11",
+      "createDate": "2020-05-11",
       "groups": [
         {
           "time": "Gunoi",
           "sessions": [
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-11", 
+              "createDate": "2020-05-11", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 1",
               "timeStart": "8:00 am",
               "timeEnd": "9:00 am",
               "location": "Cabinet 1",
-              "tracks": ["Remodelare lob nazal"],
+              "tracks": ["Lipsă apă caldă"],
               "id": "1",
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "imgs": [
                 {
                   "thumbUrl": "assets/img/1.JPG",
@@ -53,10 +53,10 @@
           "time": "Gropi",
           "sessions": [
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-12", 
+              "createDate": "2020-05-12", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 2",
@@ -65,15 +65,15 @@
               "speakerNames": ["Ted Turtle"],
               "timeStart": "9:00 am",
               "timeEnd": "9:15 am",
-              "tracks": ["Abdominoplastie subtotala"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Lipsă apă caldă"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "2"
             },
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-12", 
+              "createDate": "2020-05-12", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -82,15 +82,15 @@
               "speakerNames": ["Rachel Rabbit"],
               "timeStart": "9:15 am",
               "timeEnd": "9:30 am",
-              "tracks": ["Abdominoplastie subtotala"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Lipsă apă caldă"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "3"
             },
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-12", 
+              "createDate": "2020-05-12", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -99,8 +99,8 @@
               "speakerNames": ["Ellie Elephant"],
               "timeStart": "9:30 am",
               "timeEnd": "9:45 am",
-              "tracks": ["Abdominoplastie subtotala"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Urbanism"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "4"
             }
           ]
@@ -109,10 +109,10 @@
           "time": "Poluare",
           "sessions": [
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-13", 
+              "createDate": "2020-05-13", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -121,15 +121,15 @@
               "speakerNames": ["Eva Eagle", "Lionel Lion"],
               "timeStart": "10:00 am",
               "timeEnd": "10:15 am",
-              "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Urbanism"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "5"
             },
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-13", 
+              "createDate": "2020-05-13", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -138,15 +138,15 @@
               "speakerNames": ["Rachel Rabbit"],
               "timeStart": "10:15 am",
               "timeEnd": "10:30 am",
-              "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Urbanism", "Parcuri si spatii verzi"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "6"
             },
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-13", 
+              "createDate": "2020-05-13", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -155,15 +155,15 @@
               "speakerNames": ["Isabella Iguana", "Eva Eagle"],
               "timeStart": "10:15 am",
               "timeEnd": "10:30 am",
-              "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Parcuri si spatii verzi"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "7"
             },
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-13", 
+              "createDate": "2020-05-13", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -172,8 +172,8 @@
               "speakerNames": ["Charlie Cheetah"],
               "timeStart": "10:45 am",
               "timeEnd": "11:00 am",
-              "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Parcuri si spatii verzi"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "8"
             }
           ]
@@ -182,10 +182,10 @@
           "time": "Transport în comun",
           "sessions": [
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-14", 
+              "createDate": "2020-05-14", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -194,15 +194,15 @@
               "speakerNames": ["Karl Kitten", "Lionel Lion"],
               "timeStart": "11:00 am",
               "timeEnd": "11:45 am",
-              "tracks": ["Labioplastia"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Parcuri si spatii verzi"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "9"
             },
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-14", 
+              "createDate": "2020-05-14", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -211,15 +211,15 @@
               "speakerNames": ["Lionel Lion", "Gino Giraffe"],
               "timeStart": "11:30 am",
               "timeEnd": "11:50 am",
-              "tracks": ["Labioplastia"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Parcuri si spatii verzi"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "10"
             },
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-14", 
+              "createDate": "2020-05-14", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -228,8 +228,8 @@
               "speakerNames": ["Rachel Rabbit", "Eva Eagle"],
               "timeStart": "11:30 am",
               "timeEnd": "12:00 pm",
-              "tracks": ["Labioplastia"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Parcuri si spatii verzi"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "11"
             }
           ]
@@ -238,10 +238,10 @@
           "time": "Trafic",
           "sessions": [
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-18", 
-              "date": "2020-05-15", 
+              "createDate": "2020-05-15", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -249,8 +249,8 @@
               "description": "Come grab lunch with all the Ionic fanatics and talk all things Ionic",
               "timeStart": "12:00 pm",
               "timeEnd": "1:00 pm",
-              "tracks": ["Blefaroplastie superioară bilaterală + Abdominoplastie radicală"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Parcuri si spatii verzi"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "12"
             }
           ]
@@ -259,10 +259,10 @@
           "time": "Urbanism",
           "sessions": [
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-18", 
+              "createDate": "2020-05-18", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -271,15 +271,15 @@
               "speakerNames": ["Paul Puppy"],
               "timeStart": "1:00 pm",
               "timeEnd": "1:15 pm",
-              "tracks": ["Remodelare lob nazal"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Parcuri si spatii verzi"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "13"
             },
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-18", 
+              "createDate": "2020-05-18", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -288,15 +288,15 @@
               "speakerNames": ["Gino Giraffe"],
               "timeStart": "1:15 pm",
               "timeEnd": "1:30 pm",
-              "tracks": ["Remodelare lob nazal"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Parcuri si spatii verzi"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "14"
             },
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-18", 
+              "createDate": "2020-05-18", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -305,8 +305,8 @@
               "speakerNames": ["Molly Mouse", "Burt Bear"],
               "timeStart": "1:30 pm",
               "timeEnd": "2:00 pm",
-              "tracks": ["Remodelare lob nazal"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Trafic"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "15"
             }
           ]
@@ -315,10 +315,10 @@
           "time": "Birocratie",
           "sessions": [
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-19", 
-              "date": "2020-05-19", 
+              "createDate": "2020-05-19", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -327,15 +327,15 @@
               "speakerNames": ["Burt Bear", "Charlie Cheetah"],
               "timeStart": "2:00 pm",
               "timeEnd": "2:30 pm",
-              "tracks": ["Abdominoplastie subtotala"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Trafic"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "16"
             },
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-19", 
-              "date": "2020-05-19", 
+              "createDate": "2020-05-19", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -344,15 +344,15 @@
               "speakerNames": ["Donald Duck"],
               "timeStart": "2:30 pm",
               "timeEnd": "2:45 pm",
-              "tracks": ["Abdominoplastie subtotala"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Trafic"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "17"
             },
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-19", 
+              "createDate": "2020-05-19", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -361,8 +361,8 @@
               "speakerNames": ["Isabella Iguana", "Ellie Elephant"],
               "timeStart": "2:45 pm",
               "timeEnd": "3:00 pm",
-              "tracks": ["Abdominoplastie subtotala"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Trafic"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "18"
             }
           ]
@@ -371,10 +371,10 @@
           "time": "Siguranța cetățenilor",
           "sessions": [
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "phoneNumber":"+1-541-754-3010",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-20", 
+              "createDate": "2020-05-20", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -383,14 +383,14 @@
               "speakerNames": ["Ted Turtle"],
               "timeStart": "3:00 pm",
               "timeEnd": "3:30 pm",
-              "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Trafic"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "19"
             },
             {
-              "name": "Problema majora",
+              "subject": "Problema majora",
               "birthDate": "1980-05-17", 
-              "date": "2020-05-20", 
+              "createDate": "2020-05-20", 
               "notes": "",
               "diagnostic": "diagnostic",
               "procedureCode": "Procedura 5",
@@ -399,8 +399,8 @@
               "speakerNames": ["Rachel Rabbit"],
               "timeStart": "3:30 pm",
               "timeEnd": "3:45 pm",
-              "tracks": ["Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni"],
-              "profilePic": "/assets/img/speakers/bear.jpg",
+              "tracks": ["Trafic"],
+              "imageThumb": "/assets/img/speakers/bear.jpg",
               "id": "20"
             }
           ]
@@ -411,8 +411,8 @@
 
   "speakers": [
     {
-      "name": "Gropi subject 1",
-      "profilePic": "/assets/img/speakers/bear.jpg",
+      "subject": "Gropi subject 1",
+      "imageThumb": "/assets/img/speakers/bear.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Burt is a Bear. Burt's interests include poetry, dashing space heroes, and lions.",
@@ -423,8 +423,8 @@
       "id": "1"
     },
     {
-      "name": "Gropi subject 2",
-      "profilePic": "/assets/img/speakers/cheetah.jpg",
+      "subject": "Gropi subject 2",
+      "imageThumb": "/assets/img/speakers/cheetah.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Charlie is a Cheetah. Charlie's interests include country music, plush animals, pyrotechnics, and skeletons.",
@@ -435,8 +435,8 @@
       "id": "2"
     },
     {
-      "name": "Gropi subject 3",
-      "profilePic": "/assets/img/speakers/duck.jpg",
+      "subject": "Gropi subject 3",
+      "imageThumb": "/assets/img/speakers/duck.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Donald is a Duck. Donald's interests include carpentry, superheroes, merpeople, and glam rock.",
@@ -447,8 +447,8 @@
       "id": "3"
     },
     {
-      "name": "Gunoi subject 1",
-      "profilePic": "/assets/img/speakers/eagle.jpg",
+      "subject": "Gunoi subject 1",
+      "imageThumb": "/assets/img/speakers/eagle.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Eva is an Eagle. Eva's interests include ants, seashells, and cupcakes.",
@@ -459,8 +459,8 @@
       "id": "4"
     },
     {
-      "name": "Gropi subject 5",
-      "profilePic": "/assets/img/speakers/elephant.jpg",
+      "subject": "Gropi subject 5",
+      "imageThumb": "/assets/img/speakers/elephant.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Ellie is an Elephant. Ellie's interests include pocket watches, pool, hand fans, and ninjas.",
@@ -471,8 +471,8 @@
       "id": "5"
     },
     {
-      "name": "Gropi subject",
-      "profilePic": "/assets/img/speakers/giraffe.jpg",
+      "subject": "Gropi subject",
+      "imageThumb": "/assets/img/speakers/giraffe.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Gino is a Giraffe. Gino's interests include candy-making, unicorns, and birdhouses.",
@@ -483,8 +483,8 @@
       "id": "6"
     },
     {
-      "name": "Gropi special",
-      "profilePic": "/assets/img/speakers/iguana.jpg",
+      "subject": "Gropi special",
+      "imageThumb": "/assets/img/speakers/iguana.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Isabella is an Iguana. Isabella's interests include crystals, architecture, and candle-making.",
@@ -495,8 +495,8 @@
       "id": "7"
     },
     {
-      "name": "Gropi acasa",
-      "profilePic": "/assets/img/speakers/kitten.jpg",
+      "subject": "Gropi acasa",
+      "imageThumb": "/assets/img/speakers/kitten.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Karl is a Kitten. Karl's interests include skiing, jewelry, and needlepoint.",
@@ -507,8 +507,8 @@
       "id": "8"
     },
     {
-      "name": "Gropi centru",
-      "profilePic": "/assets/img/speakers/lion.jpg",
+      "subject": "Gropi centru",
+      "imageThumb": "/assets/img/speakers/lion.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Lionel is a Lion. Lionel's interests include lizards and mathematics.",
@@ -519,8 +519,8 @@
       "id": "9"
     },
     {
-      "name": "Gropi dric",
-      "profilePic": "/assets/img/speakers/mouse.jpg",
+      "subject": "Gropi dric",
+      "imageThumb": "/assets/img/speakers/mouse.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Molly is a Mouse. Molly's interests include werewolves and magic.",
@@ -531,8 +531,8 @@
       "id": "10"
     },
     {
-      "name": "Gropi copou",
-      "profilePic": "/assets/img/speakers/puppy.jpg",
+      "subject": "Gropi copou",
+      "imageThumb": "/assets/img/speakers/puppy.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Paul is a Puppy. Paul's interests include maps, whales, and dragons.",
@@ -543,8 +543,8 @@
       "id": "11"
     },
     {
-      "name": "Gropi ceva",
-      "profilePic": "/assets/img/speakers/rabbit.jpg",
+      "subject": "Gropi ceva",
+      "imageThumb": "/assets/img/speakers/rabbit.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Rachel is a Rabbit. Rachel's interests include clowns, skeletons, and yo-yos.",
@@ -555,8 +555,8 @@
       "id": "12"
     },
     {
-      "name": "Gropi mari",
-      "profilePic": "/assets/img/speakers/turtle.jpg",
+      "subject": "Gropi mari",
+      "imageThumb": "/assets/img/speakers/turtle.jpg",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
       "about": "Ted is a Turtle. Ted's interests include butterflies, skiing, and cupcakes.",
@@ -569,18 +569,18 @@
 
   "map": [
     {
-      "name": "Monona Terrace Convention Center",
+      "subject": "Monona Terrace Convention Center",
       "lat": 43.071584,
       "lng": -89.38012,
       "center": true
     },
     {
-      "name": "Ionic HQ",
+      "subject": "Ionic HQ",
       "lat": 43.074395,
       "lng": -89.381056
     },
     {
-      "name": "Afterparty - Brocach Irish Pub",
+      "subject": "Afterparty - Brocach Irish Pub",
       "lat": 43.07336,
       "lng": -89.38335
     }
@@ -588,43 +588,43 @@
 
   "tracks": [
     {
-      "name": "Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni",
+      "subject": "Ginecomastia - cura chirurgicală + Liposucţia 1-2 regiuni",
       "icon": "logo-angular"
     },
     {
-      "name": "Documentation",
+      "subject": "Documentation",
       "icon": "document"
     },
     {
-      "name": "Remodelare lob nazal",
+      "subject": "Remodelare lob nazal",
       "icon": "restaurant"
     },
     {
-      "name": "Abdominoplastie subtotala",
+      "subject": "Abdominoplastie subtotala",
       "icon": "logo-ionic"
     },
     {
-      "name": "Tooling",
+      "subject": "Tooling",
       "icon": "hammer"
     },
     {
-      "name": "Design",
+      "subject": "Design",
       "icon": "color-palette"
     },
     {
-      "name": "Services",
+      "subject": "Services",
       "icon": "cog"
     },
     {
-      "name": "Labioplastia",
+      "subject": "Labioplastia",
       "icon": "construct"
     },
     {
-      "name": "Blefaroplastie superioară bilaterală + Abdominoplastie radicală",
+      "subject": "Blefaroplastie superioară bilaterală + Abdominoplastie radicală",
       "icon": "call"
     },
     {
-      "name": "Navigation",
+      "subject": "Navigation",
       "icon": "compass"
     }
   ]

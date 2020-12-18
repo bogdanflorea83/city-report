@@ -27,19 +27,20 @@ $categories: (
   navigation: #6600cc
 );
 
-$dayCategories: (
-  0: #fed035,
-  1: #ac282b,
+// NEW, 'REGISTERED', 'IN_PROGRESS','COMPLETE','CANCELED'
+$categories: (
+  0: #ac282b,
+  1: #fed035,
   2: #fd8b2d,
-  3: #fe4c52,
-  4: #69bb7b,
+  3: #69bb7b,
+  4: #fe4c52,
   5: #3bc7c4,
   6: #b16be3,
   7: var(--ion-color-primary),
 );
 
-@each $track, $value in map-remove($dayCategories) {
-  ion-item-sliding[track='#{$track}'] ion-label {
+@each $status, $value in map-remove($categories) {
+  ion-item-sliding[status='#{$status}'] ion-label {
     border-left: 2px solid $value;
     padding-left: 10px;
   }
